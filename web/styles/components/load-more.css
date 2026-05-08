@@ -1,0 +1,58 @@
+/* load-more / pagination — desktop casino/slots
+   ref: baji.live/bd/en/casino @1440 (2025-04-30)
+   實測：button 125x40 #303232 radius 3, txt 14/500 #e2e6e9
+   counter "Shown N of M games" 14px #8d9aa5 居中 button 上方 8px */
+
+.casino__pagination {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 8px 0;
+  padding: 16px 0;
+  gap: 8px;
+}
+
+.pagination-btn__btn {
+  display: inline-flex;
+}
+
+.pagination-btn__button {
+  width: 125px;
+  height: 40px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-icon-bg);
+  color: var(--color-text-primary);
+  border: 0;
+  border-radius: var(--radius-card);
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  cursor: pointer;
+  padding: 0 25px;
+  transition: background-color 160ms ease;
+}
+
+.pagination-btn__button:hover {
+  background: #3a3c3c;
+}
+
+.pagination-btn__button:active {
+  background: #2a2c2c;
+}
+
+.pagination-btn__txt {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+}
+
+.casino__pagination-counter {
+  color: var(--color-text-muted);
+  font-size: var(--font-size-sm);
+  line-height: 1.4;
+  text-align: center;
+}

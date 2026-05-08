@@ -1,0 +1,52 @@
+/* Marquee: 跑馬燈 — y 從 head 下方 32 padding */
+
+.marquee {
+  height: var(--size-marquee-h);
+  padding: 32px 0 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  overflow: hidden;
+}
+
+.marquee__icon {
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--color-surface-strong);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.marquee__icon::before {
+  content: "i";
+  color: var(--color-text-primary);
+  font-size: 12px;
+  font-weight: 700;
+  font-style: italic;
+  line-height: 1;
+}
+
+.marquee__viewport {
+  flex: 1;
+  overflow: hidden;
+  position: relative;
+  height: 21px;
+}
+
+.marquee__content {
+  white-space: nowrap;
+  font-size: 14px;
+  line-height: 21px;
+  color: var(--color-text-muted);
+  animation: marqueeScroll 25s linear infinite;
+  padding-left: 100%;
+}
+
+@keyframes marqueeScroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-100%); }
+}
+
+.marquee:hover .marquee__content { animation-play-state: paused; }

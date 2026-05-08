@@ -1,0 +1,106 @@
+.top-header {
+  display: none;
+  width: 100%;
+  height: var(--size-top-header-h, 65px);
+  background: var(--color-page-bg);
+  align-items: center;
+  padding: 0 20px;
+  gap: 16px;
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  box-sizing: border-box;
+}
+
+.top-header__logo {
+  width: 46px;
+  height: 46px;
+  background: url('../../assets/images/logo.png') no-repeat center / contain;
+  flex: 0 0 auto;
+}
+
+.top-header__quick {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding-left: 12px;
+}
+
+.top-header__quick-item {
+  color: var(--color-text-muted);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  line-height: 1;
+}
+
+.top-header__quick-item::before {
+  content: "";
+  width: 16px;
+  height: 16px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: inline-block;
+}
+
+.top-header__quick-item--slots::before {
+  background-image: url('../../assets/images/side-slot.png');
+}
+.top-header__quick-item--casino::before {
+  background-image: url('../../assets/images/side-casino.png');
+}
+
+.top-header__spacer {
+  flex: 1 1 auto;
+}
+
+.top-header__actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.top-header__btn {
+  height: 34px;
+  padding: 0 16px;
+  border-radius: var(--radius-btn-sm);
+  font-size: var(--font-size-sm);
+  font-weight: 500;
+  line-height: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+}
+
+.top-header__btn--login {
+  color: var(--color-text-muted);
+  background: transparent;
+  border: 1px solid #454745;
+  min-width: 72px;
+}
+
+.top-header__btn--signup {
+  color: var(--color-text-primary);
+  background: var(--color-surface-strong);
+  border: 0;
+  min-width: 72px;
+}
+
+.top-header__flag {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-left: 4px;
+}
+
+.top-header__flag img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}

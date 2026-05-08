@@ -1,0 +1,31 @@
+# macOS
+.DS_Store
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Claude Code 本機設定
+.claude/
+
+# Capture 截圖(太大不進版控,需要時用 chrome-devtools MCP 重抓 baji.live)
+# 重抓方式詳見 mobile/HANDOFF.md
+mobile/capture/
+web/capture/
+
+# 根目錄的設計參考圖
+/index.png
+
+# IDE / Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Node modules
+node_modules/
+
+# 暫存
+*.log
+*.tmp

@@ -1,0 +1,509 @@
+/* Auth page (login + register) - desktop
+   結構：
+   .auth-layout                              全頁 (column flex)
+   ├── .auth-header (簡化 header, h=64)
+   └── .auth-landing (relative，含 splash video)
+       ├── .auth-landing__splash (absolute, video)
+       └── .auth-landing__inner (1200, margin 80 auto 0, flex justify-end)
+           └── .auth-landing__main (500 wide, padding-bottom 50)
+               └── .auth-tabs (relative)
+                   ├── .auth-tabs__head (500x44, border-bottom, 兩個按鈕)
+                   ├── .auth-tabs__line (250x3 underline，absolute)
+                   └── .auth-tabs__panel (內含 form)
+*/
+
+.auth-layout {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: var(--color-page-bg);
+}
+
+/* ---- header ---- */
+.auth-header {
+  height: var(--size-auth-header-h);
+  display: flex;
+  align-items: center;
+  background: var(--color-surface-raised);
+  padding: 0 16px;
+  position: relative;
+  z-index: 2;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.auth-header__logo {
+  width: 40px;
+  height: 40px;
+  display: inline-flex;
+  align-items: center;
+  margin-right: 8px;
+}
+.auth-header__logo img { width: 40px; height: 40px; object-fit: contain; }
+
+.auth-header__sponsor {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  height: 36px;
+}
+.auth-header__sponsor img {
+  width: 30px;
+  height: auto;
+  max-height: 36px;
+}
+
+.auth-header__spacer { flex: 1; }
+
+.auth-header__home {
+  width: 40px;
+  height: 40px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-btn-sm);
+  color: var(--color-text-muted);
+}
+.auth-header__home:hover { color: var(--color-text-primary); }
+.auth-header__home img { width: 22px; height: 22px; }
+
+/* ---- landing (含背景 video) ---- */
+.auth-landing {
+  position: relative;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 20px;
+  overflow: hidden;
+  background: var(--color-surface-raised);
+}
+
+.auth-landing__splash {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background: var(--color-surface-raised);
+  overflow: hidden;
+}
+.auth-landing__splash video,
+.auth-landing__splash img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.auth-landing__inner {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: var(--size-auth-inner-max);
+  margin: var(--size-auth-inner-margin-top) auto 0;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.auth-landing__main {
+  width: var(--size-auth-card-w);
+  padding: 0 0 50px;
+}
+
+/* ---- tabs ---- */
+.auth-tabs {
+  position: relative;
+}
+
+.auth-tabs__head {
+  display: flex;
+  height: var(--size-auth-tabs-h);
+  border-bottom: 1px solid var(--color-auth-tab-divider);
+}
+
+.auth-tabs__btn {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-regular);
+  color: var(--color-text-muted);
+  line-height: 1;
+}
+.auth-tabs__btn.is-active {
+  color: var(--color-text-primary);
+  font-weight: var(--font-weight-semibold);
+}
+
+.auth-tabs__line {
+  position: absolute;
+  left: 0;
+  top: calc(var(--size-auth-tabs-h) - 3px);
+  width: var(--size-auth-tab-w);
+  height: 3px;
+  background: var(--color-surface-strong);
+  transition: transform 0.3s ease;
+  pointer-events: none;
+}
+.auth-tabs__line.is-signup {
+  transform: translateX(var(--size-auth-tab-w));
+}
+
+/* ---- panels ---- */
+.auth-panel { padding: var(--size-auth-card-pad); }
+.auth-panel[hidden] { display: none; }
+
+/* ---- step heading（sign up 上方大標：Contact / Personal / Password） ---- */
+.auth-step-heading {
+  margin: 0 0 8px;
+  padding: 0 var(--size-auth-card-pad);
+  font-size: 20px;
+  font-weight: var(--font-weight-semibold);
+  line-height: 1.5;
+  color: var(--color-text-primary);
+}
+
+/* ---- form rows ---- */
+.auth-form { display: block; }
+.auth-form[hidden] { display: none; }
+.auth-form__row { margin: 0; }
+.auth-form__row + .auth-form__row { margin-top: var(--size-auth-row-gap); }
+
+.auth-form__label {
+  display: block;
+  height: 21px;
+  line-height: 21px;
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-regular);
+  color: var(--color-text-muted);
+}
+
+/* input */
+.auth-input {
+  margin-top: var(--size-auth-label-input-gap);
+  height: var(--size-auth-input-h);
+  background: var(--color-auth-input-bg);
+  border-radius: var(--radius-btn-sm);
+  display: flex;
+  align-items: center;
+  padding: 0 16px;
+}
+.auth-input input {
+  flex: 1;
+  height: 100%;
+  width: 100%;
+  background: transparent;
+  border: 0;
+  outline: 0;
+  color: var(--color-text-primary);
+  font-family: Arial, sans-serif;
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-regular);
+  line-height: normal;
+}
+.auth-input input::placeholder {
+  color: var(--color-text-muted);
+}
+/* WebKit autofill 用 inset shadow 蓋色 */
+.auth-input input:-webkit-autofill,
+.auth-input input:-webkit-autofill:focus,
+.auth-input input:-webkit-autofill:hover {
+  -webkit-box-shadow: 0 0 0 1000px var(--color-auth-input-bg) inset;
+  -webkit-text-fill-color: var(--color-text-primary);
+  caret-color: var(--color-text-primary);
+}
+
+/* forgot */
+.auth-forgot {
+  display: block;
+  margin-top: 27px;            /* ref 量到 password row 結束 → forgot 約 27px */
+  text-align: right;
+  font-size: var(--font-size-sm);
+  line-height: 21px;
+  color: var(--color-link-green);
+}
+.auth-forgot:hover { filter: brightness(1.1); }
+
+/* submit
+   原站 transition: background 0.3s — disabled→enabled 時 bg 漸變 */
+.auth-submit {
+  width: 100%;
+  height: var(--size-auth-input-h);
+  margin-top: var(--size-auth-submit-mt);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  cursor: pointer;
+  background: var(--color-auth-submit-bg);
+  color: var(--color-text-primary);
+  border-radius: var(--radius-btn-sm);
+  font-family: Arial, sans-serif;
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  line-height: 1;
+  padding: 0 10px;
+  transition: background 0.3s ease;
+}
+.auth-submit:hover { filter: brightness(1.1); }
+.auth-submit.is-disabled,
+.auth-submit:disabled {
+  background: var(--color-auth-submit-disabled-bg);
+  cursor: not-allowed;
+  filter: none;
+}
+
+/* ---- signup stepper ----
+   單一 ul（HTML 不允許 ol 巢 ul）：負責 layout 與 list reset。 */
+.auth-stepper {
+  margin: var(--size-auth-card-pad) 0;
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 0;
+}
+
+.auth-stepper__item {
+  width: var(--size-auth-stepper-circle);
+  text-align: center;
+  position: relative;
+  font-size: var(--font-size-xs);
+  color: var(--color-text-muted);
+  transition: color 0.5s ease;
+}
+.auth-stepper__item.is-active,
+.auth-stepper__item.is-done {
+  color: var(--color-auth-stepper-active);
+}
+
+/* circle inactive 是「填充深灰」，不是 outline；transition bg 0.5s */
+.auth-stepper__circle {
+  width: var(--size-auth-stepper-circle);
+  height: var(--size-auth-stepper-circle);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-icon-bg);
+  color: var(--color-auth-stepper-text);
+  font-size: var(--size-auth-stepper-circle-font);
+  font-weight: var(--font-weight-regular);
+  line-height: 1;
+  transition: background-color 0.5s ease;
+}
+.auth-stepper__item.is-active .auth-stepper__circle,
+.auth-stepper__item.is-done .auth-stepper__circle {
+  background: var(--color-auth-stepper-active);
+}
+
+/* connector 也是 li，bg 與 inactive circle 同色，active 時變綠 */
+.auth-stepper__connector {
+  width: 105px;
+  height: 2px;
+  margin: 25px 0 0;
+  background: var(--color-icon-bg);
+  align-self: flex-start;
+  flex: 1 1 0;
+  transition: background-color 0.5s ease;
+}
+.auth-stepper__connector.is-done { background: var(--color-auth-stepper-active); }
+
+.auth-stepper__label {
+  display: block;
+  margin-top: 8px;
+  font-size: var(--font-size-sm);
+  line-height: 21px;
+  color: inherit;
+  white-space: nowrap;
+  transition: color 0.5s ease;
+}
+
+/* ---- select (currency) ---- */
+.auth-select {
+  margin-top: var(--size-auth-label-input-gap);
+  width: 100%;
+  height: var(--size-auth-input-h);
+  background: var(--color-auth-input-bg);
+  border-radius: var(--radius-btn-sm);
+  border: 0;
+  display: flex;
+  align-items: center;
+  padding: 0 40px 0 16px;
+  position: relative;
+  cursor: pointer;
+  color: var(--color-text-primary);
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-regular);
+  line-height: 14px;
+  text-align: left;
+}
+.auth-select__flag {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 18px;
+  font-size: 16px;
+  line-height: 1;
+  margin-right: 8px;
+  flex: 0 0 auto;
+}
+.auth-select__chevron {
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  width: 10px;
+  height: 6px;
+  transform: translateY(-50%);
+  background: linear-gradient(135deg, transparent 50%, var(--color-text-muted) 50%) no-repeat,
+              linear-gradient(45deg, var(--color-text-muted) 50%, transparent 50%) no-repeat;
+  background-size: 50% 100%, 50% 100%;
+  background-position: 0 0, 100% 0;
+  transition: transform 0.2s ease;
+  transform-origin: center;
+}
+.auth-dropdown.is-open .auth-select__chevron {
+  transform: translateY(-50%) rotate(180deg);
+}
+.auth-dropdown.is-open .auth-phone__chevron {
+  transform: rotate(180deg);
+}
+.auth-phone__chevron {
+  transition: transform 0.2s ease;
+}
+
+/* ---- phone row ---- */
+.auth-phone {
+  margin-top: var(--size-auth-label-input-gap);
+  display: flex;
+  gap: 8px;
+}
+.auth-phone__country {
+  width: 100px;
+  height: var(--size-auth-input-h);
+  background: var(--color-auth-input-bg);
+  border-radius: var(--radius-btn-sm);
+  border: 0;
+  display: flex;
+  align-items: center;
+  padding: 0 8px;
+  cursor: pointer;
+  position: relative;
+  color: var(--color-text-primary);
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-sm);
+}
+.auth-phone__flag {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 18px;
+  font-size: 16px;
+  line-height: 1;
+  margin-right: 6px;
+  flex: 0 0 auto;
+}
+.auth-phone__code { flex: 1; line-height: 14px; }
+.auth-phone__chevron {
+  width: 8px;
+  height: 5px;
+  background: linear-gradient(135deg, transparent 50%, var(--color-text-muted) 50%) no-repeat,
+              linear-gradient(45deg, var(--color-text-muted) 50%, transparent 50%) no-repeat;
+  background-size: 50% 100%, 50% 100%;
+  background-position: 0 0, 100% 0;
+}
+.auth-phone__input {
+  flex: 1;
+  height: var(--size-auth-input-h);
+  background: var(--color-auth-input-bg);
+  border-radius: var(--radius-btn-sm);
+  border: 0;
+  outline: 0;
+  padding: 0 16px;
+  color: var(--color-text-primary);
+  font-family: Arial, sans-serif;
+  font-size: var(--font-size-sm);
+}
+.auth-phone__input::placeholder {
+  color: var(--color-text-muted);
+  letter-spacing: 0.05em;
+}
+
+/* ---- 共用 Dropdown（currency / phone country） ---- */
+.auth-dropdown {
+  position: relative;
+  width: 100%;
+}
+.auth-phone .auth-dropdown {
+  width: 100px;
+  flex: 0 0 100px;
+}
+.auth-dropdown__list {
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 0;
+  right: 0;
+  margin: 0;
+  padding: 4px 0;
+  list-style: none;
+  background: var(--color-auth-input-bg);
+  border-radius: var(--radius-btn-sm);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+  z-index: 100;
+  max-height: 240px;
+  overflow-y: auto;
+}
+.auth-phone .auth-dropdown__list {
+  width: 240px;
+}
+.auth-dropdown__option {
+  display: flex;
+  align-items: center;
+  height: 40px;
+  padding: 0 14px;
+  color: var(--color-text-primary);
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-sm);
+  cursor: pointer;
+  outline: none;
+}
+.auth-dropdown__option:hover,
+.auth-dropdown__option:focus {
+  background: rgba(255, 255, 255, 0.06);
+}
+.auth-dropdown__option--active {
+  color: var(--color-link-green, #27b488);
+}
+.auth-dropdown__option-flag {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 18px;
+  font-size: 16px;
+  line-height: 1;
+  margin-right: 10px;
+}
+.auth-dropdown__option-label {
+  flex: 1 1 auto;
+}
+
+/* ---- 浮動右下 baji watermark ---- */
+.auth-watermark {
+  position: fixed;
+  right: 16px;
+  bottom: 16px;
+  width: 32px;
+  height: 32px;
+  z-index: 5;
+  opacity: 0.85;
+  pointer-events: none;
+}
+.auth-watermark img { width: 100%; height: 100%; object-fit: contain; }

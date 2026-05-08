@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en" class="is-mobile">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
+  <title>BAJI Casino - Terms & Conditions</title>
+  <link rel="stylesheet" href="styles/tokens.css" />
+  <link rel="stylesheet" href="styles/base.css" />
+  <link rel="stylesheet" href="styles/layout.css" />
+  <link rel="stylesheet" href="styles/components/header.css" />
+  <link rel="stylesheet" href="styles/components/about-footer.css" />
+  <link rel="stylesheet" href="styles/components/back-to-top.css" />
+  <link rel="stylesheet" href="styles/components/tab-bar.css" />
+  <link rel="stylesheet" href="styles/components/menu-drawer.css" />
+  <link rel="stylesheet" href="styles/components/promotions-panel.css" />
+  <style>
+    .terms-page {
+      padding: 16px;
+      max-width: 100%;
+      color: var(--color-text-primary, #fff);
+    }
+    .terms-page h1 { font-size: 20px; margin: 8px 0 16px; }
+    .terms-page h2 { font-size: 15px; margin: 20px 0 8px; color: var(--color-accent, #f5c423); }
+    .terms-page p { font-size: 13px; line-height: 1.6; margin: 0 0 12px; color: rgba(255,255,255,0.78); }
+    .terms-page ul { font-size: 13px; line-height: 1.6; padding-left: 20px; margin: 0 0 12px; color: rgba(255,255,255,0.78); }
+  </style>
+</head>
+<body>
+  <div class="layout">
+
+    <header class="layout__header header">
+      <div class="header__logo" aria-label="BAJI"></div>
+      <div class="header__spacer"></div>
+      <div class="header__actions">
+        <a class="header__btn header__btn--login" href="login.html">Log in</a>
+        <a class="header__btn header__btn--signup" href="login.html?tab=signup">Sign up</a>
+      </div>
+      <div class="header__flag">
+        <img src="assets/images/flag-bd.png" alt="BD" />
+      </div>
+    </header>
+
+    <main class="layout__main">
+      <article class="terms-page">
+        <h1>Terms &amp; Conditions / Responsible Gaming</h1>
+
+        <p>This page covers regulatory information, responsible gaming guidance, and account-holder
+        obligations applicable to all players on Baji.com. By accessing or using the platform you
+        agree to abide by the terms below.</p>
+
+        <h2 id="regulations">Regulations</h2>
+        <p>Baji.com is licensed and regulated by the Government of the Autonomous Island of Anjouan,
+        Union of Comoros, under License No. ALSI-202410030-FI1. We comply with all applicable
+        regulatory standards for player protection, anti-money-laundering, and fair-play certification.</p>
+
+        <h2 id="gamcare">GamCare</h2>
+        <p>If you or someone you know feels gambling has become a problem, support is available 24/7
+        through GamCare. Their helpline, online chat, and self-assessment tools can help identify and
+        address harmful patterns.</p>
+
+        <h2 id="age-limit">Age Limit 18+</h2>
+        <p>All registered users must be at least 18 years of age. We use third-party verification
+        services to confirm the age and identity of every account-holder. Underage gambling is illegal
+        and accounts found in breach will be permanently closed and any winnings forfeited.</p>
+
+        <h2>Self-Help Tools</h2>
+        <ul>
+          <li>Deposit limits — set daily, weekly, or monthly caps on deposits.</li>
+          <li>Loss limits — automatic stop once a defined threshold is reached.</li>
+          <li>Session reminders — periodic prompts to review your play time.</li>
+          <li>Self-exclusion — pause your account for a defined period or permanently.</li>
+        </ul>
+
+        <h2>Contact</h2>
+        <p>For complaints, dispute resolution, or compliance enquiries, please email
+        <a href="mailto:legal@northernlightsltd.com">legal@northernlightsltd.com</a>.</p>
+      </article>
+    </main>
+
+    <button class="back-to-top" type="button" data-back-to-top aria-label="Back to top" hidden>
+      <span aria-hidden="true">&#8593;</span>
+    </button>
+
+    <footer class="layout__bottom-bar">
+      <nav class="tab-bar" aria-label="Primary" data-tab-bar>
+        <button class="tab-bar__btn tab-bar__btn--menu" data-tab="menu">
+          <span class="tab-bar__img" aria-hidden="true"></span>
+          <span class="tab-bar__text">Menu</span>
+        </button>
+        <button class="tab-bar__btn tab-bar__btn--casino" data-tab="casino">
+          <span class="tab-bar__img" aria-hidden="true"></span>
+          <span class="tab-bar__text">Casino</span>
+        </button>
+        <button class="tab-bar__btn tab-bar__btn--slots" data-tab="slots">
+          <span class="tab-bar__img" aria-hidden="true"></span>
+          <span class="tab-bar__text">Slots</span>
+        </button>
+        <button class="tab-bar__btn tab-bar__btn--promotions" data-tab="promotions">
+          <span class="tab-bar__img" aria-hidden="true"></span>
+          <span class="tab-bar__text">Promotions</span>
+        </button>
+      </nav>
+    </footer>
+
+  </div>
+
+  <script src="scripts/back-to-top.js" defer></script>
+  <script src="scripts/tab-bar.js" defer></script>
+  <script src="scripts/menu-drawer.js" defer></script>
+  <script src="scripts/promotions-panel.js" defer></script>
+  <script src="scripts/main.js" defer></script>
+</body>
+</html>

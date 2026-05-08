@@ -1,0 +1,114 @@
+:root {
+  /* === 顏色（baji.live 桌面實測） === */
+  --color-page-bg: #111111;
+  --color-surface-raised: #141515;     /* top header / side nav 底色 */
+  --color-surface-card: #222424;       /* game card / chat btn 底色 */
+  --color-surface-strong: #14805e;     /* sign up / marquee icon */
+  --color-icon-bg: #303232;            /* hamburger icon 底色 */
+  --color-border: #1e1f1f;             /* header / side-nav 細線 */
+  --color-text-primary: #e2e6e9;
+  --color-text-muted: #8d9aa5;         /* link items / login btn 灰 */
+  --color-text-secondary: #657381;
+  --color-link-green: #27b488;
+
+  /* === 字體 === */
+  --font-family-base:
+    "Noto Sans Digits Polyfills", Poppins, "Helvetica Neue", Helvetica, Tahoma,
+    "PingFang SC", "Hiragino Sans GB", "Heiti SC", "Microsoft YaHei",
+    "WenQuanYi Micro Hei", sans-serif;
+  --font-family-btn: Arial, sans-serif;
+
+  /* === 字級（desktop 實測 baji.live） === */
+  --font-size-base: 30px;              /* body 預設（繼承用） */
+  --font-size-btn: 14px;               /* Login / Sign up / category tab text */
+  --font-size-link: 12px;              /* header link items text */
+  --font-size-xs: 12px;
+  --font-size-sm: 14px;
+  --font-size-md: 16px;
+
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+
+  /* === 桌面尺寸（1× 設計基準 1920；流式 RWD 1024+，無上限） === */
+  --size-top-header-h: 65px;
+  --size-side-nav-w: 64px;
+  --awd-min: 1024px;
+  --awd-base: 1920px;                  /* 設計 1× 基準，layout 不限制最大寬 */
+  /* main-page__body 流式置中：1024→840, 1440→~1152, 1920→~1632，超過 1920 仍 1632 居中 */
+  --size-content-max: clamp(840px, 85vw, 1700px);
+  --size-content-pad-x: clamp(16px, 1.5vw, 32px);
+  --size-content-inner-max: 1636px;
+
+  /* hero / sections */
+  --size-hero-h: 210px;
+  --size-marquee-h: 69px;
+  --size-section-margin-top: 16px;
+  --size-section-pad-x: 15px;          /* labeled-carousel padding */
+
+  /* category tabs */
+  --size-category-h: 80px;
+  --size-category-tab-w: 80px;
+  --size-category-tab-gap: 8px;
+  --size-category-icon: 50px;
+  --size-category-text-h: 14px;
+
+  /* game cards (8 col) */
+  --size-card-w: 143px;                /* 1× 基準；< 1232 用 calc 流式 */
+  --size-card-h: 190px;
+  --size-card-gap: 8px;
+
+  /* main-page__body 流式 max-width 控制（對齊 baji.live 公式）
+     use-rem=1 → rem 模式（搭配 html font-size 3.75px，1rem = 3.75px）
+     use-rem=0 → vw 模式
+     grid-gap 同樣可切換：2.1333 * 1rem = 8px / 2.1333vw 流式 */
+  --use-rem: 1;
+  --grid-gap: calc(2.1333333333 * 1rem * var(--use-rem) + 2.1333333333 * 1vw * (1 - var(--use-rem)));
+
+  /* header inner */
+  --size-header-hamburger: 44px;
+  --size-header-logo: 40px;
+  --size-header-link-btn-h: 64px;
+  --size-header-btn-h: 34px;
+  --size-header-btn-pad-x: 10px;
+  --size-header-flag: 24px;
+
+  /* side-nav inner */
+  --size-side-item-h: 52px;
+  --size-side-icon: 20px;
+  --size-side-livechat-w: 44px;
+  --size-side-livechat-h: 36px;
+
+  /* === 圓角 === */
+  --radius-card: 3px;
+  --radius-btn-sm: 3px;
+  --radius-pill: 50px;
+
+  /* === 桌面斷點 === */
+  --desktop-min: 1280px;
+  --desktop-base: 1440px;
+  --desktop-max: 1920px;
+
+  /* === Auth (login/register) ===
+     桌面 login 頁不共用首頁 header；簡化 header h=64，背景影片佔滿，右側 500 寬表單卡。 */
+  --size-auth-header-h: 64px;
+  --size-auth-inner-max: 1200px;
+  --size-auth-inner-margin-top: 80px;
+  --size-auth-card-w: 500px;
+  --size-auth-card-pad: 16px;          /* card 內 padding */
+  --size-auth-row-gap: 16px;           /* form row 之間 margin-top */
+  --size-auth-label-input-gap: 8px;
+  --size-auth-tabs-h: 44px;
+  --size-auth-tab-w: 250px;
+  --size-auth-input-h: 50px;
+  --size-auth-submit-mt: 16px;
+  --size-auth-stepper-circle: 50px;
+  --size-auth-stepper-circle-font: 16px;
+
+  --color-auth-tab-divider: rgba(255, 255, 255, 0.15);
+  --color-auth-input-bg: var(--color-surface-card);    /* #222424 */
+  --color-auth-submit-bg: var(--color-surface-strong); /* #14805E */
+  --color-auth-submit-disabled-bg: #0c4d38;
+  --color-auth-stepper-active: var(--color-surface-strong);
+  --color-auth-stepper-text: #ffffff;
+}

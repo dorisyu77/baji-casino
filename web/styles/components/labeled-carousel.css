@@ -1,0 +1,75 @@
+/* Labeled carousel: 共用樣式（events / featured-games） */
+
+.labeled-carousel {
+  padding: 0 15px;
+}
+
+.labeled-carousel__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+  height: 24px;
+}
+
+.labeled-carousel__title {
+  font-size: 16px;
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-primary);
+  line-height: 24px;
+}
+
+.labeled-carousel__more {
+  font-size: 12px;
+  color: var(--color-text-muted);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.labeled-carousel__more:hover { color: var(--color-text-primary); }
+
+.labeled-carousel__viewport {
+  overflow-x: auto;
+  overflow-y: hidden;
+  scrollbar-width: none;
+}
+.labeled-carousel__viewport::-webkit-scrollbar { display: none; }
+
+/* Events */
+.events__list {
+  display: flex;
+  gap: 8px;
+}
+.events__item {
+  flex-shrink: 0;
+  width: clamp(280px, 25vw, 400px);
+  height: clamp(140px, 12vw, 195px);
+  border-radius: var(--radius-card);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: var(--color-surface-card);
+  cursor: pointer;
+  transition: transform 200ms ease;
+}
+.events__item:hover { transform: translateY(-2px); }
+
+/* Featured */
+.featured__list {
+  display: flex;
+  gap: 8px;
+}
+.featured__item {
+  flex-shrink: 0;
+  width: clamp(120px, 10vw, 165px);
+  height: clamp(160px, 13.5vw, 220px);
+  border-radius: var(--radius-card);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: var(--color-surface-card);
+  cursor: pointer;
+  transition: transform 200ms ease;
+}
+.featured__item:hover { transform: translateY(-2px); }

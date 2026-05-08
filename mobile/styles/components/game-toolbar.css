@@ -1,0 +1,58 @@
+.game-toolbar {
+  display: flex;
+  align-items: center;
+  height: 60px;
+  padding: 0 16px 0 16px;
+  background: var(--color-surface-raised);
+  gap: 8px;
+}
+.game-toolbar__category {
+  display: inline-flex;
+  align-items: center;
+  background: transparent;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+  color: var(--color-text-primary);
+  flex: 1 1 auto;
+  min-width: 0;
+}
+.game-toolbar__icon {
+  width: 28px;
+  height: 28px;
+  background: url('../../assets/images/bottom-slot.png') no-repeat center / contain;
+  flex: 0 0 auto;
+  margin-right: 8px;
+}
+.game-toolbar__title {
+  font-size: 18px;
+  font-weight: var(--font-weight-semibold);
+}
+.game-toolbar__chevron {
+  width: 10px;
+  height: 10px;
+  flex: 0 0 auto;
+  border-right: 2px solid var(--color-text-muted);
+  border-bottom: 2px solid var(--color-text-muted);
+  transform: rotate(45deg);
+  margin: -4px 0 0 8px;
+}
+.game-toolbar__actions {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+}
+.game-toolbar__action {
+  width: 22px;
+  height: 22px;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  filter: brightness(0) invert(0.85);
+}
+.game-toolbar__action--search { background-image: url('../../assets/images/icon-search.svg'); }
+.game-toolbar__action--filter { background-image: url('../../assets/images/icon-filter.svg'); }
+.game-toolbar__action--sort   { background-image: url('../../assets/images/icon-sort.svg'); }

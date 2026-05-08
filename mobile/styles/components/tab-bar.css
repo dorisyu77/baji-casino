@@ -1,0 +1,100 @@
+.tab-bar {
+  display: flex;
+  width: 100%;
+  height: var(--size-bottom-bar-h);
+  background: var(--color-surface-card);
+  position: sticky;
+  bottom: 0;
+  z-index: 500;
+}
+
+.layout__bottom-bar {
+  position: sticky;
+  bottom: 0;
+  z-index: 500;
+}
+
+.tab-bar__btn {
+  flex: 1 1 0;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  color: var(--color-text-muted);
+  padding: 9px 0 0;
+  box-sizing: border-box;
+  position: relative;
+  transition: color 0.4s, border-color 0.4s;
+}
+
+.tab-bar__btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 47px;
+  background: linear-gradient(
+    to top,
+    var(--color-bottom-bar-active-base),
+    rgba(20, 128, 94, 0.4)
+  );
+  opacity: 0;
+  transition: opacity 0.6s;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.tab-bar__btn.is-active::before {
+  opacity: 1;
+}
+
+.tab-bar__btn.is-active {
+  color: var(--color-text-primary);
+}
+
+.tab-bar__btn.is-active .tab-bar__text {
+  color: var(--color-text-primary);
+}
+
+.tab-bar__btn:active .tab-bar__img {
+  transform: scale(0.92);
+}
+
+.tab-bar__img {
+  transition: transform 180ms ease;
+}
+
+.tab-bar__img {
+  width: 20px;
+  height: 20px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: relative;
+  z-index: 1;
+}
+
+.tab-bar__text {
+  margin-top: 3px;
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-regular);
+  line-height: 12px;
+  color: var(--color-text-muted);
+  position: relative;
+  z-index: 1;
+}
+
+.tab-bar__btn--menu .tab-bar__img {
+  background-image: url('../../assets/images/bottom-menu.png');
+}
+.tab-bar__btn--casino .tab-bar__img {
+  background-image: url('../../assets/images/bottom-casino.png');
+}
+.tab-bar__btn--slots .tab-bar__img {
+  background-image: url('../../assets/images/bottom-slot.png');
+}
+.tab-bar__btn--promotions .tab-bar__img {
+  background-image: url('../../assets/images/bottom-promotion.png');
+}

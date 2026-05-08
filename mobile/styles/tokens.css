@@ -1,0 +1,68 @@
+:root {
+  /* 色 — 已對齊 baji.live 行動版實測值(2026-05-08, 詳 capture/_tokens-audit.md) */
+  --color-page-bg: #111111;
+  --color-surface-raised: #141515;
+  --color-surface-card: #222424;
+  --color-surface-strong: #14805e;
+  --color-link-green: #27b488;
+  --color-text-primary: #e2e6e9;
+  --color-text-muted: #8d9aa5;
+  --color-text-secondary: #657381;
+  --color-bottom-bar-active-base: #24313c;
+
+  /* 字 */
+  --font-family-base:
+    "Noto Sans Digits Polyfills", Poppins, "Helvetica Neue", Helvetica, Tahoma,
+    "PingFang SC", "Hiragino Sans GB", "Heiti SC", "Microsoft YaHei",
+    "WenQuanYi Micro Hei", sans-serif;
+  --font-family-btn: Arial, sans-serif;
+
+  --font-size-xs: 12px;
+  --font-size-sm: 14px;
+  --font-size-md: 16px;
+  --font-weight-regular: 400;
+  --font-weight-semibold: 600;
+
+  /* 間距 */
+  --space-sidepad: 16px;
+  --space-tab-gap: 8px;
+  --space-grid-gap: 8px;
+
+  /* 尺寸（手機基準，375） */
+  --size-header-h: 50px;
+  --size-hero-h: 161px;
+  --size-hero-w: 336px;
+  --size-marquee-h: 37px;
+  --size-nav-btn: 80px;
+  --size-game-card-w: 108px;
+  --size-game-card-h: 143px;
+  --size-more-btn-h: 48px;
+  --size-more-btn-w: 150px;
+  --size-bottom-bar-h: 50px;
+  --size-bottom-btn-h: 49px;
+  --size-speaker: 20px;
+  --size-flag: 24px;
+  --size-logo-h: 40px;
+
+  /* 圓角 */
+  --radius-card: 3px;
+  --radius-btn-sm: 3px;
+  --radius-pill: 50px;
+
+  /* RWD 容器 */
+  --awd-min: 360px;
+  --awd-max: 430px;
+}
+
+/* 桌機（>=1024）tokens overrides */
+@media (min-width: 1024px) {
+  :root {
+    --size-top-header-h: 65px;
+    --size-sidebar-w: 64px;
+    --size-hero-h: 210px;
+    --size-hero-w: auto;
+    --size-game-card-w: 143px;
+    --size-game-card-h: 190px;
+    --space-sidepad: 86px;
+  }
+}

@@ -1,0 +1,81 @@
+/* Match Odds 區塊：賽事賠率（placeholder 高度與 baji.live 對齊 234） */
+
+.match-odds {
+  height: 234px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.match-odds__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 24px;
+  padding: 0 15px;
+}
+.match-odds__title {
+  font-size: 16px;
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-primary);
+  line-height: 24px;
+}
+
+.match-odds__list {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  padding: 0 15px;
+}
+
+.match-odds__card {
+  background: var(--color-surface-card);
+  border-radius: var(--radius-card);
+  padding: 12px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  cursor: pointer;
+  transition: background 200ms ease;
+}
+.match-odds__card:hover { background: #2a2c2c; }
+
+.match-odds__league {
+  font-size: 11px;
+  color: var(--color-text-muted);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.match-odds__teams {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 13px;
+  color: var(--color-text-primary);
+}
+.match-odds__team {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.match-odds__odds {
+  display: flex;
+  gap: 6px;
+}
+.match-odds__odd {
+  flex: 1;
+  background: #1a1c1c;
+  border-radius: var(--radius-btn-sm);
+  padding: 6px 8px;
+  text-align: center;
+  font-size: 12px;
+  color: var(--color-text-muted);
+}
+.match-odds__odd-value {
+  display: block;
+  color: var(--color-text-primary);
+  font-weight: var(--font-weight-semibold);
+  margin-top: 2px;
+}

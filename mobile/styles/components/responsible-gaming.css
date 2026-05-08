@@ -1,0 +1,33 @@
+.responsible-gaming {
+  padding: 20px 15px 0;
+}
+
+.responsible-gaming__title {
+  color: var(--color-link-green);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  line-height: 1;
+  margin: 0 0 15px 0;
+}
+
+.responsible-gaming__row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 20px;
+}
+
+.responsible-gaming__cell {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border-radius: 0;
+  padding: 0;
+}
+
+.responsible-gaming__cell img {
+  width: 30px;
+  height: 30px;
+  object-fit: contain;
+}

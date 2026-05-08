@@ -1,0 +1,70 @@
+/* 桌面 layout：top header (65) + side nav (64, sticky) + main column (含 main + footer 連續滾動) */
+
+.layout {
+  min-height: 100vh;
+  background: var(--color-surface-raised);
+  display: grid;
+  grid-template-columns: var(--size-side-nav-w) 1fr;
+  grid-template-rows: var(--size-top-header-h) auto;
+  grid-template-areas:
+    "head head"
+    "side content";
+}
+
+.layout__top-header {
+  grid-area: head;
+  background: var(--color-surface-raised);
+  border-bottom: 1px solid var(--color-border);
+  position: sticky;
+  top: 0;
+  z-index: 500;
+}
+
+.layout__side-nav {
+  grid-area: side;
+  background: var(--color-surface-raised);
+  border-right: 1px solid var(--color-border);
+  position: sticky;
+  top: var(--size-top-header-h);
+  height: calc(100vh - var(--size-top-header-h));
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #2a2c2c transparent;
+}
+.layout__side-nav::-webkit-scrollbar { width: 4px; }
+.layout__side-nav::-webkit-scrollbar-thumb { background: #2a2c2c; border-radius: 2px; }
+
+/* main + footer 共用一欄，連續滾動；整個 content 區塊置左、最大寬 1920 */
+.layout__content {
+  grid-area: content;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  max-width: var(--awd-base);
+  width: 100%;
+  margin-inline: 0;
+}
+
+.layout__main {
+  background: var(--color-page-bg);
+}
+
+.layout__footer {
+  background: var(--color-page-bg);
+}
+
+/* main-page 容器：head 全寬，body max 1232 居中 */
+.main-page__head {
+  width: 100%;
+}
+
+.main-page__body {
+  max-width: calc(calc(320 * 1rem * var(--use-rem) + 320 * 1vw * (1 - var(--use-rem))) + var(--grid-gap) * 4);
+  margin: 0 auto;
+  padding: 0 var(--size-content-pad-x);
+}
+
+/* 各 section margin（除了第一個 marquee） */
+.main-page__body > * + * {
+  margin-top: var(--size-section-margin-top);
+}

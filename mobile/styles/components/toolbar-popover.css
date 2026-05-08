@@ -1,0 +1,97 @@
+/* Toolbar popover:Category / Search / Filter / Sort 共用的下拉面板 */
+.toolbar-popover {
+  display: none;
+  background: var(--color-surface-raised, #1d2027);
+  color: var(--color-text-primary, #fff);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+.toolbar-popover.is-open { display: block; }
+
+.toolbar-popover__inner {
+  padding: 12px 16px;
+  max-height: 60vh;
+  overflow-y: auto;
+}
+
+.toolbar-popover__heading {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.5);
+  margin: 0 0 8px;
+}
+
+/* Category list / Filter list 共用 */
+.toolbar-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+}
+.toolbar-list__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding: 8px 4px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid transparent;
+  font-size: 11px;
+  text-align: center;
+  cursor: pointer;
+  color: inherit;
+}
+.toolbar-list__item.is-active {
+  border-color: var(--color-accent, #f5c423);
+  color: var(--color-accent, #f5c423);
+}
+.toolbar-list__item-dot {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+/* Search */
+.toolbar-search {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.toolbar-search__input {
+  flex: 1;
+  height: 36px;
+  padding: 0 12px;
+  background: rgba(255, 255, 255, 0.06);
+  color: inherit;
+  border: 0;
+  border-radius: 6px;
+  font-size: 14px;
+  outline: none;
+}
+
+/* Sort options */
+.toolbar-sort {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.toolbar-sort__item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 4px;
+  font-size: 14px;
+  cursor: pointer;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+.toolbar-sort__item:last-child { border-bottom: 0; }
+.toolbar-sort__item.is-active { color: var(--color-accent, #f5c423); }
+.toolbar-sort__item.is-active::after {
+  content: '✓';
+  font-weight: 700;
+}

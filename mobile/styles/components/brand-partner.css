@@ -1,0 +1,26 @@
+.brand-partner {
+  padding: 20px 15px 0;
+}
+
+.brand-partner__title {
+  color: var(--color-link-green);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  line-height: 1;
+  margin: 0 0 15px 0;
+}
+
+.brand-partner__cell {
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-start;
+  background: transparent;
+  border-radius: 0;
+  padding: 0;
+}
+
+.brand-partner__cell img {
+  width: 88px;
+  height: 30px;
+  object-fit: contain;
+}

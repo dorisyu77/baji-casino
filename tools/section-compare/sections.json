@@ -1,0 +1,111 @@
+{
+  "_doc": "每頁面每區塊的本地 selector 對照表。baji.live (ref) selector 在每塊比對時動態定位（用 textContent + 類名啟發），實測後填回 ref 欄位。",
+  "_pages": {
+    "mobile/index.html": {
+      "viewport": "375x812x3,mobile,touch",
+      "ua": "Mozilla/5.0 (iPhone; CPU iPhone OS 17_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.0 Mobile/15E148 Safari/604.1",
+      "refUrl": "https://baji.live/bd/en",
+      "localUrl": "http://localhost:8000/mobile/index.html",
+      "sections": [
+        { "name": "header", "local": ".header", "ref": "" },
+        { "name": "hero-banner", "local": ".hero-banner", "ref": "" },
+        { "name": "marquee", "local": ".marquee", "ref": "" },
+        { "name": "category-tabs", "local": ".category-tabs", "ref": "" },
+        { "name": "game-grid", "local": ".game-grid", "ref": "" },
+        { "name": "providers", "local": ".providers", "ref": ".main-page__labeled-carousel--provider" },
+        { "name": "events", "local": ".events", "ref": ".main-page__labeled-carousel--event" },
+        { "name": "featured", "local": ".featured", "ref": ".main-page__labeled-carousel--feature-games" },
+        { "name": "sponsorships", "local": ".sponsorships", "ref": "app-ambassador-lists:has(.ambassador-lists__title:contains('Sponsorships'))" },
+        { "name": "ambassadors", "local": ".ambassadors", "ref": "app-ambassador-lists:has(.ambassador-lists__title:contains('Brand Ambassadors'))" },
+        { "name": "brand-partner", "local": ".brand-partner", "ref": "app-icon-lists:has(.icon-lists__title:contains('Official Brand Partner'))" },
+        { "name": "gaming-license", "local": ".gaming-license", "ref": "app-gaming-license" },
+        { "name": "responsible-gaming", "local": ".responsible-gaming", "ref": "app-icon-lists:has(.icon-lists__title:contains('Responsible Gaming'))" },
+        { "name": "about", "local": ".about", "ref": ".footer__description" },
+        { "name": "tab-bar", "local": ".tab-bar", "ref": "app-bottom-bar .bottom-bar" },
+        { "name": "auth-modal", "local": "[data-modal]", "ref": "(baji 無 modal，導航至 /login)" }
+      ]
+    },
+    "mobile/login.html": { "viewport": "375x812x3,mobile,touch", "refUrl": "https://baji.live/bd/en/login", "localUrl": "http://localhost:8000/mobile/login.html", "sections": [
+      { "name": "auth-header", "local": ".auth-header", "ref": ".layout-headered__header .header" },
+      { "name": "auth-hero", "local": ".auth-hero", "ref": ".account-landing__splash" },
+      { "name": "auth-tabs", "local": ".auth-tabs", "ref": ".tab-navigation__head" },
+      { "name": "login-form", "local": "[data-auth-form='login']", "ref": ".login-normal__form" },
+      { "name": "signup-form", "local": "[data-auth-form='signup']", "ref": ".tab-navigation__body (signup tab)" },
+      { "name": "fab", "local": ".auth-fab", "ref": ".float-widget__float-wrap" }
+    ]},
+    "mobile/casino.html": { "viewport": "375x812x3,mobile,touch", "refUrl": "https://baji.live/bd/en/casino", "localUrl": "http://localhost:8000/mobile/casino.html", "sections": [
+      { "name": "header", "local": ".header", "ref": ".layout-headered__header .header" },
+      { "name": "game-toolbar", "local": ".game-toolbar", "ref": ".casino__toolbar.toolbar" },
+      { "name": "slot-grid", "local": ".slot-grid", "ref": ".casino__gamelists" },
+      { "name": "back-to-top", "local": ".back-to-top", "ref": "(scroll trigger fab)" },
+      { "name": "tab-bar", "local": ".tab-bar", "ref": "app-bottom-bar .bottom-bar" }
+    ]},
+    "mobile/slots.html": { "viewport": "375x812x3,mobile,touch", "refUrl": "https://baji.live/bd/en/slots", "localUrl": "http://localhost:8000/mobile/slots.html", "_note": "baji.live/slots 為 404，無 ref 可比對；沿用 casino 規格", "sections": [
+      { "name": "header", "local": ".header", "ref": "(no ref - 404)" },
+      { "name": "game-toolbar", "local": ".game-toolbar", "ref": "(no ref - 404)" },
+      { "name": "slot-grid", "local": ".slot-grid", "ref": "(no ref - 404)" },
+      { "name": "back-to-top", "local": ".back-to-top", "ref": "(no ref - 404)" },
+      { "name": "tab-bar", "local": ".tab-bar", "ref": "(no ref - 404)" }
+    ]},
+    "web/index.html": {
+      "viewport": "1440x900x2",
+      "ua": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36",
+      "refUrl": "https://baji.live/bd/en",
+      "localUrl": "http://localhost:8000/web/index.html",
+      "sections": [
+        { "name": "top-header", "local": ".layout__top-header", "ref": "(baji desktop top-header)" },
+        { "name": "side-nav", "local": ".layout__side-nav", "ref": ".layout-fullview__side-nav" },
+        { "name": "hero", "local": ".hero", "ref": "(baji desktop hero banner)" },
+        { "name": "marquee", "local": ".marquee", "ref": ".main-page__marquee-wrapper" },
+        { "name": "category-tabs", "local": ".category-tabs", "ref": ".main-page__main-nav" },
+        { "name": "game-grid", "local": ".game-grid", "ref": ".main-page__main-nav-games-banner" },
+        { "name": "providers", "local": ".providers", "ref": ".main-page__labeled-carousel--provider" },
+        { "name": "match-odds", "local": ".match-odds", "ref": "app-match-odds" },
+        { "name": "events", "local": ".labeled-carousel.events", "ref": ".main-page__labeled-carousel--event" },
+        { "name": "featured", "local": ".labeled-carousel.featured", "ref": ".main-page__labeled-carousel--feature-games" },
+        { "name": "footer", "local": ".layout__footer", "ref": ".layout-fullview__footer" },
+        { "name": "float-btn", "local": ".float-btn", "ref": "(intercom float btn)" },
+        { "name": "back-to-top", "local": ".back-to-top", "ref": "(scroll trigger fab)" }
+      ]
+    },
+    "web/login.html": { "viewport": "1440x900x2", "refUrl": "https://baji.live/bd/en/login", "localUrl": "http://localhost:8000/web/login.html", "sections": [
+      { "name": "auth-header", "local": ".auth-header", "ref": "(baji desktop top-header)" },
+      { "name": "auth-landing", "local": ".auth-landing", "ref": ".account-landing" },
+      { "name": "login-form", "local": "[data-auth-form='login']", "ref": ".login-normal__form" },
+      { "name": "signup-stepper", "local": ".auth-stepper", "ref": "(stepper in signup tab)" }
+    ]},
+    "web/casino.html": {
+      "viewport": "1440x900x2",
+      "ua": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36",
+      "refUrl": "https://baji.live/bd/en/casino",
+      "localUrl": "http://localhost:8000/web/casino.html",
+      "sections": [
+        { "name": "top-header", "local": ".layout__top-header", "ref": ".layout-fullview__header" },
+        { "name": "side-nav", "local": ".layout__side-nav", "ref": ".layout-fullview__side-nav" },
+        { "name": "casino-toolbar", "local": ".casino__toolbar", "ref": ".casino__toolbar.toolbar" },
+        { "name": "casino-grid", "local": ".slot-grid", "ref": ".casino__gamelists" },
+        { "name": "load-more", "local": ".casino__pagination", "ref": ".pagination-btn__btn" },
+        { "name": "footer", "local": ".layout__footer", "ref": ".layout-fullview__footer" },
+        { "name": "float-btn", "local": ".float-btn", "ref": ".float-widget__float-wrap" },
+        { "name": "back-to-top", "local": ".back-to-top", "ref": "(scroll trigger fab)" }
+      ]
+    },
+    "web/slots.html": {
+      "viewport": "1440x900x2",
+      "ua": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36",
+      "refUrl": "https://baji.live/bd/en/slots",
+      "localUrl": "http://localhost:8000/web/slots.html",
+      "_note": "baji.live/slots 為 404，無 ref 可比對；視覺與互動沿用 casino 規格",
+      "sections": [
+        { "name": "top-header", "local": ".layout__top-header", "ref": "(no ref - 404, sided with casino spec)" },
+        { "name": "side-nav", "local": ".layout__side-nav", "ref": "(no ref - 404, sided with casino spec)" },
+        { "name": "slots-toolbar", "local": ".casino__toolbar", "ref": "(no ref - 404, sided with casino spec)" },
+        { "name": "slots-grid", "local": ".slot-grid", "ref": "(no ref - 404, sided with casino spec)" },
+        { "name": "load-more", "local": ".casino__pagination", "ref": "(no ref - 404, sided with casino spec)" },
+        { "name": "footer", "local": ".layout__footer", "ref": "(no ref - 404, sided with casino spec)" },
+        { "name": "float-btn", "local": ".float-btn", "ref": "(no ref - 404, sided with casino spec)" },
+        { "name": "back-to-top", "local": ".back-to-top", "ref": "(no ref - 404, sided with casino spec)" }
+      ]
+    }
+  }
+}

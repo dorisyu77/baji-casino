@@ -1,0 +1,87 @@
+.category-tabs {
+  display: flex;
+  gap: var(--space-tab-gap);
+  padding: 0 var(--space-sidepad);
+  overflow-x: auto;
+  overflow-y: hidden;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.category-tabs::-webkit-scrollbar {
+  display: none;
+}
+
+.category-tab {
+  width: var(--size-nav-btn);
+  height: var(--size-nav-btn);
+  flex: 0 0 auto;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 4px 0 8px;
+  color: var(--color-text-muted);
+  text-align: center;
+  box-sizing: border-box;
+  transition: color 0.4s;
+}
+
+.category-tab__img {
+  width: 50px;
+  height: 50px;
+  background-size: 750px 50px;
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  position: relative;
+  z-index: 1;
+  transition: background-position 0.5s steps(14);
+}
+
+.category-tab--active .category-tab__img {
+  background-position: -700px 0;
+}
+
+.category-tab__text {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  line-height: 14px;
+  margin-top: auto;
+  position: relative;
+  z-index: 1;
+}
+
+.category-tab--active {
+  color: var(--color-text-primary);
+}
+
+.category-tab::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 80px;
+  height: 80px;
+  background: transparent;
+  border-radius: var(--radius-card);
+  z-index: 0;
+  transition: background 0.4s;
+}
+
+.category-tab--active::before {
+  background: var(--color-surface-strong);
+}
+
+.category-tab--exclusive .category-tab__img {
+  background-image: url('../../assets/images/tab-exclusive-ani.png');
+}
+.category-tab--sport .category-tab__img {
+  background-image: url('../../assets/images/tab-sport-ani.png');
+}
+.category-tab--casino .category-tab__img {
+  background-image: url('../../assets/images/tab-casino-ani.png');
+}
+.category-tab--slot .category-tab__img {
+  background-image: url('../../assets/images/tab-slot-ani.png');
+}

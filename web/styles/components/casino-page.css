@@ -1,0 +1,22 @@
+/* casino-page — desktop casino/slots 共用內容容器
+   ref: baji.live/bd/en/casino @1440 — .casino x=150, w=1200, 內 padding 16 → 內容 1168 */
+
+.casino-page {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 16px;
+  background: var(--color-page-bg);
+}
+
+@media (min-width: 1920px) {
+  .casino-page {
+    max-width: 1600px;
+  }
+}
+
+@media (max-width: 1280px) {
+  .casino-page {
+    max-width: 100%;
+  }
+}

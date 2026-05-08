@@ -1,0 +1,399 @@
+/* Auth 頁面共用樣式：login.html / signup（未來合併進 login.html 切 tab） */
+
+/* Header（簡化版：左 logo + sponsor，右 home icon） */
+.auth-header {
+  display: flex;
+  align-items: center;
+  height: var(--size-header-h);
+  padding: 0 15px 0 16px;
+  gap: 0;
+  background: var(--color-surface-raised);
+}
+.auth-header__logo {
+  width: 40px;
+  height: 40px;
+  flex: 0 0 auto;
+  background: url('../../assets/images/logo.png') no-repeat center / contain;
+}
+.auth-header__sponsor {
+  width: 30px;
+  height: 33px;
+  margin-left: 5px;
+  flex: 0 0 auto;
+  /* 球隊 sponsor 圖 — 暫留占位（Stage 9 補圖） */
+}
+.auth-header__spacer {
+  flex: 1 1 auto;
+}
+.auth-header__home {
+  width: 20px;
+  height: 20px;
+  flex: 0 0 auto;
+  background: url('../../assets/images/icon-home.svg') no-repeat center / contain;
+}
+
+/* 主容器 */
+.auth-page {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+/* Hero（Welcome 影像，對應 ref 的 welcome-bn 影片首幀） */
+.auth-hero {
+  position: relative;
+  height: 180px;
+  padding: 0;
+  background: url('../../assets/images/auth-welcome-bn.png') no-repeat center / cover,
+    var(--color-surface-raised);
+  overflow: hidden;
+}
+.auth-hero__text,
+.auth-hero__greeting,
+.auth-hero__title,
+.auth-hero__logo {
+  display: none;
+}
+
+/* Tabs（Log in / Sign up） */
+.auth-tabs {
+  display: flex;
+  width: 100%;
+  background: var(--color-surface-raised);
+  border-bottom: 1px solid #2a2c2c;
+  position: relative;
+}
+.auth-tab {
+  flex: 1 1 0;
+  height: 48px;
+  background: transparent;
+  color: var(--color-text-muted);
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-regular);
+  position: relative;
+  border: 0;
+  transition: color 0.3s ease;
+}
+.auth-tab.is-active {
+  color: var(--color-text-primary);
+  font-weight: var(--font-weight-semibold);
+}
+.auth-tabs__line {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 50%;
+  height: 3px;
+  background: var(--color-surface-strong);
+  transform: translateX(0);
+  transition: transform 0.3s ease;
+  pointer-events: none;
+}
+
+/* Form */
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  padding: 18px 16px 0;
+  gap: 17px;
+  background: var(--color-surface-raised);
+  flex: 1 1 auto;
+}
+.auth-form[hidden] {
+  display: none;
+}
+.auth-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.auth-field__label {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-regular);
+  color: var(--color-text-muted);
+}
+.auth-field__input {
+  height: 50px;
+  padding: 0 14px;
+  background: var(--color-surface-card);
+  border: 0;
+  border-radius: var(--radius-card);
+  color: var(--color-text-primary);
+  font-family: inherit;
+  font-size: var(--font-size-md);
+  outline: none;
+}
+.auth-field__input::placeholder {
+  color: var(--color-text-secondary);
+}
+.auth-field__input:focus {
+  outline: 1px solid var(--color-surface-strong);
+  outline-offset: -1px;
+}
+
+.auth-forgot {
+  align-self: flex-end;
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-link-green);
+  margin-top: 0;
+  line-height: 21px;
+}
+
+.auth-submit {
+  width: 100%;
+  height: 50px;
+  margin-top: 12px;
+  background: var(--color-surface-strong);
+  color: var(--color-text-primary);
+  font-family: var(--font-family-btn);
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-semibold);
+  border-radius: var(--radius-btn-sm);
+  border: 0;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Sign up: 下拉選單 */
+.auth-select,
+.auth-phone__country {
+  display: inline-flex;
+  align-items: center;
+  height: 50px;
+  padding: 0 14px;
+  background: var(--color-surface-card);
+  border: 0;
+  border-radius: var(--radius-card);
+  color: var(--color-text-primary);
+  font-family: inherit;
+  font-size: var(--font-size-md);
+  cursor: pointer;
+  width: 100%;
+}
+.auth-select__flag,
+.auth-phone__flag {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 18px;
+  font-size: 16px;
+  line-height: 1;
+  flex: 0 0 auto;
+  margin-right: 8px;
+}
+.auth-select__value {
+  flex: 1 1 auto;
+  text-align: left;
+}
+.auth-select__chevron,
+.auth-phone__chevron,
+.auth-refer__chevron {
+  width: 12px;
+  height: 12px;
+  flex: 0 0 auto;
+  border-right: 2px solid var(--color-text-muted);
+  border-bottom: 2px solid var(--color-text-muted);
+  transform: rotate(45deg);
+  margin-left: 8px;
+  margin-top: -4px;
+  transition: transform 0.2s ease;
+  transform-origin: 60% 60%;
+}
+.auth-dropdown.is-open .auth-select__chevron,
+.auth-dropdown.is-open .auth-phone__chevron,
+.auth-collapsible.is-open .auth-refer__chevron {
+  transform: rotate(225deg);
+  margin-top: 0;
+}
+
+/* Sign up: 電話欄 (左 country code, 右 number) */
+.auth-phone {
+  display: flex;
+  gap: 8px;
+}
+.auth-phone__country {
+  width: 128px;
+  flex: 0 0 128px;
+  padding: 0 10px;
+}
+.auth-phone__code {
+  flex: 1 1 auto;
+  text-align: left;
+  margin-left: 4px;
+}
+.auth-phone__input {
+  flex: 1 1 auto;
+  height: 50px;
+  padding: 0 14px;
+  background: var(--color-surface-card);
+  border: 0;
+  border-radius: var(--radius-card);
+  color: var(--color-text-primary);
+  font-family: inherit;
+  font-size: var(--font-size-md);
+  letter-spacing: 1px;
+  outline: none;
+}
+.auth-phone__input::placeholder {
+  color: var(--color-text-secondary);
+}
+
+/* Sign up: Refer code 折疊按鈕 */
+.auth-refer {
+  display: inline-flex;
+  align-items: center;
+  align-self: flex-start;
+  background: transparent;
+  border: 0;
+  color: var(--color-text-primary);
+  font-family: inherit;
+  font-size: var(--font-size-sm);
+  padding: 0;
+  cursor: pointer;
+  margin-top: -4px;
+}
+.auth-refer__chevron {
+  width: 10px;
+  height: 10px;
+  border-right-width: 2px;
+  border-bottom-width: 2px;
+  border-color: var(--color-text-primary);
+  margin-left: 8px;
+  margin-top: -2px;
+}
+
+/* Sign up: Terms checkbox */
+.auth-terms {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  margin-top: 12px;
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+  line-height: 1.4;
+  padding-bottom: 16px;
+}
+.auth-terms__checkbox {
+  flex: 0 0 auto;
+  width: 18px;
+  height: 18px;
+  margin: 1px 0 0;
+  accent-color: var(--color-surface-strong);
+}
+.auth-terms__link {
+  color: var(--color-link-green);
+  text-decoration: underline;
+}
+
+/* 共用 Dropdown / Collapsible（Sign up 用：currency / phone country / refer） */
+.auth-dropdown {
+  position: relative;
+  width: 100%;
+}
+.auth-phone .auth-dropdown {
+  width: 128px;
+  flex: 0 0 128px;
+}
+.auth-dropdown__list {
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 0;
+  right: 0;
+  margin: 0;
+  padding: 4px 0;
+  list-style: none;
+  background: var(--color-surface-card);
+  border-radius: var(--radius-card);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+  z-index: 100;
+  max-height: 240px;
+  overflow-y: auto;
+}
+.auth-phone .auth-dropdown__list {
+  width: 240px;
+}
+.auth-dropdown__option {
+  display: flex;
+  align-items: center;
+  height: 44px;
+  padding: 0 14px;
+  color: var(--color-text-primary);
+  font-size: var(--font-size-md);
+  cursor: pointer;
+  outline: none;
+}
+.auth-dropdown__option:hover,
+.auth-dropdown__option:focus {
+  background: rgba(255, 255, 255, 0.06);
+}
+.auth-dropdown__option--active {
+  color: var(--color-link-green);
+}
+.auth-dropdown__option-flag {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 18px;
+  font-size: 16px;
+  line-height: 1;
+  margin-right: 10px;
+}
+.auth-dropdown__option-label {
+  flex: 1 1 auto;
+}
+
+.auth-collapsible {
+  display: flex;
+  flex-direction: column;
+}
+.auth-collapsible__panel {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.25s ease, margin-top 0.25s ease;
+  margin-top: 0;
+}
+.auth-collapsible__panel[hidden] {
+  display: block;
+}
+.auth-collapsible.is-open .auth-collapsible__panel {
+  max-height: 80px;
+  margin-top: 8px;
+}
+.auth-collapsible__input {
+  width: 100%;
+  height: 50px;
+  padding: 0 14px;
+  background: var(--color-surface-card);
+  border: 0;
+  border-radius: var(--radius-card);
+  color: var(--color-text-primary);
+  font-family: inherit;
+  font-size: var(--font-size-md);
+  outline: none;
+  box-sizing: border-box;
+}
+.auth-collapsible__input::placeholder {
+  color: var(--color-text-secondary);
+}
+.auth-collapsible__input:focus {
+  outline: 1px solid var(--color-surface-strong);
+  outline-offset: -1px;
+}
+
+/* 浮動 客服/聊天 icon (右下，對應 ref 的 Intercom 浮動按鈕) */
+.auth-fab {
+  position: fixed;
+  right: 20px;
+  bottom: 60px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: #14805e url('../../assets/images/logo.png') no-repeat center / 35px 35px;
+  z-index: 600;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}

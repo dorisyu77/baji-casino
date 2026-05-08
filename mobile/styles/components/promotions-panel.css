@@ -1,0 +1,113 @@
+/* Promotions panel:由 tab-bar Promotions 鍵或 menu-drawer 內 Promotions 項觸發,
+   bottom-sheet 從底部滑上,80vh 高度 */
+.promotions-panel {
+  position: fixed;
+  inset: 0;
+  z-index: 95;
+  display: none;
+}
+.promotions-panel.is-open { display: block; }
+
+.promotions-panel__backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+.promotions-panel.is-open .promotions-panel__backdrop { opacity: 1; }
+
+.promotions-panel__sheet {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  max-height: 85vh;
+  background: var(--color-surface, #15171c);
+  color: var(--color-text, #fff);
+  border-radius: 16px 16px 0 0;
+  transform: translateY(100%);
+  transition: transform 0.28s ease;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+.promotions-panel.is-open .promotions-panel__sheet { transform: translateY(0); }
+
+.promotions-panel__header {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 16px 8px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+.promotions-panel__title {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+}
+.promotions-panel__close {
+  width: 32px;
+  height: 32px;
+  background: transparent;
+  border: 0;
+  color: inherit;
+  font-size: 22px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.promotions-panel__body {
+  flex: 1 1 auto;
+  overflow-y: auto;
+  padding: 12px;
+  -webkit-overflow-scrolling: touch;
+}
+
+.promo-card {
+  display: block;
+  width: 100%;
+  margin: 0 0 12px;
+  border-radius: 12px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.04);
+  text-decoration: none;
+  color: inherit;
+  border: 0;
+  text-align: left;
+  cursor: pointer;
+}
+.promo-card__image {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  background: #222;
+}
+.promo-card__body {
+  padding: 12px 14px 14px;
+}
+.promo-card__title {
+  margin: 0 0 4px;
+  font-size: 14px;
+  font-weight: 600;
+}
+.promo-card__desc {
+  margin: 0;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.65);
+  line-height: 1.45;
+}
+.promo-card__cta {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 6px 14px;
+  background: var(--color-accent, #f5c423);
+  color: #111;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+body.promotions-panel-open { overflow: hidden; }

@@ -1,0 +1,154 @@
+/* game-toolbar — desktop casino/slots toolbar
+   ref: baji.live/bd/en/casino @1440 (2025-04-30)
+   實測：toolbar h=126；wrap h=60 (head+tool); search-box h=50 + 16 margin-bottom
+   bg #141515, head txt #e2e6e9 20px/600, search input 14px #e2e6e9 */
+
+.game-toolbar {
+  background: var(--color-surface-raised);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.game-toolbar__wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 60px;
+}
+
+.game-toolbar__left,
+.game-toolbar__right {
+  display: flex;
+  align-items: center;
+}
+
+.game-toolbar-head {
+  display: flex;
+  align-items: center;
+  height: 60px;
+  padding: 0 0 0 16px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.game-toolbar-head__icon {
+  width: 20px;
+  height: 20px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.game-toolbar-head__img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.game-toolbar-head__txt {
+  /* ref baji.live/casino @1440 → 20px/600/#e2e6e9, line-height 20px */
+  font-size: 20px;
+  font-weight: var(--font-weight-semibold);
+  line-height: 20px;
+  color: var(--color-text-primary);
+  margin: 0 0 0 8px;
+}
+
+.game-toolbar-head__arrow {
+  width: 16px;
+  height: 16px;
+  margin-left: 4px;
+  background-color: var(--color-text-primary);
+  -webkit-mask: url('../../assets/images/arrow/arrow-left.svg') no-repeat center / contain;
+          mask: url('../../assets/images/arrow/arrow-left.svg') no-repeat center / contain;
+  transform: rotate(-90deg);
+  opacity: 0.6;
+}
+
+.game-toolbar__tool {
+  display: flex;
+  align-items: center;
+}
+
+.game-toolbar-tool__toolicon {
+  width: 50px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  background: transparent;
+  border: 0;
+  padding: 0;
+  transition: background-color 160ms ease;
+}
+
+.game-toolbar-tool__toolicon:hover {
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.game-toolbar-tool__img {
+  width: 20px;
+  height: 20px;
+  background-color: var(--color-text-primary);
+  -webkit-mask: var(--toolicon-mask) no-repeat center / contain;
+          mask: var(--toolicon-mask) no-repeat center / contain;
+}
+
+.game-toolbar-tool__toolicon[data-icon="filter"] .game-toolbar-tool__img {
+  -webkit-mask-image: url('../../assets/images/icon-filter.svg');
+          mask-image: url('../../assets/images/icon-filter.svg');
+}
+.game-toolbar-tool__toolicon[data-icon="sort"] .game-toolbar-tool__img {
+  -webkit-mask-image: url('../../assets/images/icon-sort.svg');
+          mask-image: url('../../assets/images/icon-sort.svg');
+}
+
+/* search bar (toolbar 第二行) */
+.game-toolbar__game-search-box {
+  width: 100%;
+  height: 50px;
+  margin: 0 0 16px 0;
+}
+
+.search-block-form {
+  display: flex;
+  align-items: center;
+  height: 50px;
+  background: transparent;
+}
+
+.search-block-form__toolicon {
+  flex: 0 0 50px;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.search-block-form__toolicon-img {
+  width: 20px;
+  height: 20px;
+  background-color: var(--color-text-primary);
+  -webkit-mask: url('../../assets/images/icon-search.svg') no-repeat center / contain;
+          mask: url('../../assets/images/icon-search.svg') no-repeat center / contain;
+}
+
+.search-block-form__input {
+  flex: 1 1 auto;
+  height: 50px;
+  background: transparent;
+  border: 0;
+  outline: 0;
+  padding: 0 16px 0 0;
+  color: var(--color-text-primary);
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-sm);
+}
+
+.search-block-form__input::placeholder {
+  color: var(--color-text-secondary);
+}

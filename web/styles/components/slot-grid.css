@@ -1,0 +1,51 @@
+/* slot-grid — desktop casino/slots game grid
+   ref: baji.live/bd/en/casino @1440 (2025-04-30)
+   實測：8 col 139px, gap 8px, card 139x184.9, radius 3, overflow hidden
+   流式：1280 → 8 col 縮; 1920 → 8 col 拉 */
+
+.slot-grid {
+  display: grid;
+  grid-template-columns: repeat(8, minmax(0, 1fr));
+  gap: 8px;
+  padding: 0 0 16px;
+  margin: 0;
+  width: 100%;
+}
+
+.slot-card {
+  display: block;
+  width: 100%;
+  aspect-ratio: 139 / 184.9;
+  background: var(--color-surface-card);
+  border-radius: var(--radius-card);
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+  transition: transform 200ms ease, box-shadow 200ms ease;
+  text-decoration: none;
+}
+
+.slot-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+}
+
+.slot-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* 視窗 < 1280 退到 6 col；< 1024 退 4 col */
+@media (max-width: 1280px) {
+  .slot-grid {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 1024px) {
+  .slot-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}

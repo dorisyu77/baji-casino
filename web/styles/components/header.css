@@ -1,0 +1,122 @@
+/* Top header: hamburger | logo | sponsor | quick nav (Slots/Casino) | spacer | login/signup | flag */
+
+.header {
+  height: var(--size-top-header-h);
+  display: flex;
+  align-items: center;
+  background: var(--color-surface-raised);
+  padding: 0 0 0 8px;
+}
+
+.header__head {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  height: 100%;
+}
+
+.header__hamburger {
+  width: var(--size-header-hamburger);
+  height: var(--size-header-hamburger);
+  background: var(--color-icon-bg);
+  border-radius: var(--radius-btn-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.header__hamburger img { width: 20px; height: 20px; }
+
+.header__logo {
+  width: var(--size-header-logo);
+  height: var(--size-header-logo);
+  margin-left: 16px;
+}
+
+.header__sponsor {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 78px;
+  height: 35px;
+  margin-left: 8px;
+}
+.header__sponsor img {
+  width: 30px;
+  height: auto;
+  max-height: 36px;
+}
+
+.header__nav {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  margin-left: 16px;
+}
+
+.header__nav-btn {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  height: var(--size-header-link-btn-h);
+  padding: 0 12px;
+  color: var(--color-text-muted);
+  font-size: var(--font-size-link);
+  font-weight: var(--font-weight-regular);
+  line-height: 1;
+}
+.header__nav-btn img { width: 20px; height: 20px; }
+.header__nav-btn:hover { color: var(--color-text-primary); }
+
+.header__spacer { flex: 1; }
+
+.header__body {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.header__buttons {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-right: 4px;
+}
+
+.header__btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: var(--size-header-btn-h);
+  padding: 0 var(--size-header-btn-pad-x);
+  border-radius: var(--radius-btn-sm);
+  font-size: var(--font-size-btn);
+  font-weight: var(--font-weight-medium);
+  line-height: 1;
+  font-family: var(--font-family-btn);
+  white-space: nowrap;
+}
+.header__btn--tertiary {
+  color: var(--color-text-muted);
+  background: transparent;
+}
+.header__btn--tertiary:hover { color: var(--color-text-primary); }
+.header__btn--primary {
+  color: var(--color-text-primary);
+  background: var(--color-surface-strong);
+}
+.header__btn--primary:hover { filter: brightness(1.1); }
+
+.header__lang {
+  width: 80px;
+  height: var(--size-header-link-btn-h);
+  padding: 0 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.header__lang img {
+  width: var(--size-header-flag);
+  height: var(--size-header-flag);
+  border-radius: 50%;
+  object-fit: cover;
+}

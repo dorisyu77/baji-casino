@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en" class="is-mobile">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
+  <title>BAJI Casino - Live Casino</title>
+  <link rel="stylesheet" href="styles/tokens.css" />
+  <link rel="stylesheet" href="styles/base.css" />
+  <link rel="stylesheet" href="styles/layout.css" />
+  <link rel="stylesheet" href="styles/components/header.css" />
+  <link rel="stylesheet" href="styles/components/game-toolbar.css" />
+  <link rel="stylesheet" href="styles/components/slot-grid.css" />
+  <link rel="stylesheet" href="styles/components/load-more.css" />
+  <link rel="stylesheet" href="styles/components/toolbar-popover.css" />
+  <link rel="stylesheet" href="styles/components/providers.css" />
+  <link rel="stylesheet" href="styles/components/events.css" />
+  <link rel="stylesheet" href="styles/components/featured-games.css" />
+  <link rel="stylesheet" href="styles/components/sponsorships.css" />
+  <link rel="stylesheet" href="styles/components/brand-ambassadors.css" />
+  <link rel="stylesheet" href="styles/components/brand-partner.css" />
+  <link rel="stylesheet" href="styles/components/gaming-license.css" />
+  <link rel="stylesheet" href="styles/components/responsible-gaming.css" />
+  <link rel="stylesheet" href="styles/components/about-footer.css" />
+  <link rel="stylesheet" href="styles/components/back-to-top.css" />
+  <link rel="stylesheet" href="styles/components/tab-bar.css" />
+  <link rel="stylesheet" href="styles/components/menu-drawer.css" />
+  <link rel="stylesheet" href="styles/components/promotions-panel.css" />
+  <style>
+    .game-toolbar--casino .game-toolbar__icon {
+      background-image: url('assets/images/bottom-casino.png');
+    }
+  </style>
+</head>
+<body>
+  <div class="layout">
+
+    <header class="layout__header header">
+      <div class="header__logo" aria-label="BAJI"></div>
+      <div class="header__spacer"></div>
+      <div class="header__actions">
+        <a class="header__btn header__btn--login" href="login.html">Log in</a>
+        <a class="header__btn header__btn--signup" href="login.html?tab=signup">Sign up</a>
+      </div>
+      <div class="header__flag">
+        <img src="assets/images/flag-bd.png" alt="BD" />
+      </div>
+    </header>
+
+    <main class="layout__main">
+
+      <div class="game-toolbar game-toolbar--casino" aria-label="Casino toolbar">
+        <button class="game-toolbar__category" type="button" aria-haspopup="listbox">
+          <span class="game-toolbar__icon" aria-hidden="true"></span>
+          <span class="game-toolbar__title">Casino</span>
+          <span class="game-toolbar__chevron" aria-hidden="true"></span>
+        </button>
+        <div class="game-toolbar__actions">
+          <button class="game-toolbar__action game-toolbar__action--search" type="button" aria-label="Search"></button>
+          <button class="game-toolbar__action game-toolbar__action--filter" type="button" aria-label="Filter"></button>
+          <button class="game-toolbar__action game-toolbar__action--sort" type="button" aria-label="Sort"></button>
+        </div>
+      </div>
+
+      <section class="slot-grid" aria-label="Casino games" data-slot-grid>
+        <a class="slot-card" href="#" data-game="evolution-baccarat"><img src="assets/images/game-super-ace-plus.png" alt="Baccarat" /></a>
+        <a class="slot-card" href="#" data-game="evolution-roulette"><img src="assets/images/game-fortune-tiger.png" alt="Roulette" /></a>
+        <a class="slot-card" href="#" data-game="evolution-blackjack"><img src="assets/images/game-fortune-garuda-500.png" alt="Blackjack" /></a>
+        <a class="slot-card" href="#" data-game="dragon-tiger"><img src="assets/images/game-aviator.png" alt="Dragon Tiger" /></a>
+        <a class="slot-card" href="#" data-game="andar-bahar"><img src="assets/images/game-super-elements.png" alt="Andar Bahar" /></a>
+        <a class="slot-card" href="#" data-game="teen-patti"><img src="assets/images/game-money-wheel.png" alt="Teen Patti" /></a>
+        <a class="slot-card" href="#" data-game="sicbo"><img src="assets/images/game-aztec-gems.png" alt="Sic Bo" /></a>
+        <a class="slot-card" href="#" data-game="lightning-roulette"><img src="assets/images/game-super-tiger.png" alt="Lightning Roulette" /></a>
+        <a class="slot-card" href="#" data-game="crazy-time"><img src="assets/images/game-super-ace-plus.png" alt="Crazy Time" /></a>
+        <a class="slot-card" href="#" data-game="monopoly-live"><img src="assets/images/game-fortune-tiger.png" alt="Monopoly Live" /></a>
+        <a class="slot-card" href="#" data-game="dream-catcher"><img src="assets/images/game-fortune-garuda-500.png" alt="Dream Catcher" /></a>
+        <a class="slot-card" href="#" data-game="speed-baccarat"><img src="assets/images/game-aviator.png" alt="Speed Baccarat" /></a>
+        <a class="slot-card" href="#" data-game="mega-ball"><img src="assets/images/game-super-elements.png" alt="Mega Ball" /></a>
+        <a class="slot-card" href="#" data-game="super-six"><img src="assets/images/game-money-wheel.png" alt="Super Six" /></a>
+        <a class="slot-card" href="#" data-game="baccarat-squeeze"><img src="assets/images/game-aztec-gems.png" alt="Baccarat Squeeze" /></a>
+        <a class="slot-card" href="#" data-game="european-roulette"><img src="assets/images/game-super-tiger.png" alt="European Roulette" /></a>
+        <a class="slot-card" href="#" data-game="infinite-blackjack"><img src="assets/images/game-super-ace-plus.png" alt="Infinite Blackjack" /></a>
+        <a class="slot-card" href="#" data-game="casino-holdem"><img src="assets/images/game-fortune-tiger.png" alt="Casino Hold'em" /></a>
+        <a class="slot-card" href="#" data-game="ultimate-texas-holdem"><img src="assets/images/game-fortune-garuda-500.png" alt="Ultimate Texas Hold'em" /></a>
+        <a class="slot-card" href="#" data-game="pai-gow"><img src="assets/images/game-aviator.png" alt="Pai Gow" /></a>
+        <a class="slot-card" href="#" data-game="caribbean-stud"><img src="assets/images/game-super-elements.png" alt="Caribbean Stud" /></a>
+        <a class="slot-card" href="#" data-game="lightning-baccarat"><img src="assets/images/game-money-wheel.png" alt="Lightning Baccarat" /></a>
+        <a class="slot-card" href="#" data-game="lightning-blackjack"><img src="assets/images/game-aztec-gems.png" alt="Lightning Blackjack" /></a>
+        <a class="slot-card" href="#" data-game="quantum-roulette"><img src="assets/images/game-super-tiger.png" alt="Quantum Roulette" /></a>
+        <a class="slot-card" href="#" data-game="immersive-roulette"><img src="assets/images/game-super-ace-plus.png" alt="Immersive Roulette" /></a>
+        <a class="slot-card" href="#" data-game="xxxtreme-lightning"><img src="assets/images/game-fortune-tiger.png" alt="XXXtreme Lightning Roulette" /></a>
+        <a class="slot-card" href="#" data-game="red-door-roulette"><img src="assets/images/game-fortune-garuda-500.png" alt="Red Door Roulette" /></a>
+        <a class="slot-card" href="#" data-game="football-studio"><img src="assets/images/game-aviator.png" alt="Football Studio" /></a>
+        <a class="slot-card" href="#" data-game="side-bet-city"><img src="assets/images/game-super-elements.png" alt="Side Bet City" /></a>
+        <a class="slot-card" href="#" data-game="lightning-dice"><img src="assets/images/game-money-wheel.png" alt="Lightning Dice" /></a>
+        <a class="slot-card" href="#" data-game="mega-wheel"><img src="assets/images/game-aztec-gems.png" alt="Mega Wheel" /></a>
+        <a class="slot-card" href="#" data-game="boom-city"><img src="assets/images/game-super-tiger.png" alt="Boom City" /></a>
+        <a class="slot-card" href="#" data-game="baccarat-live"><img src="assets/images/game-super-ace-plus.png" alt="Baccarat Live" /></a>
+        <a class="slot-card" href="#" data-game="dragon-bonus-baccarat"><img src="assets/images/game-fortune-tiger.png" alt="Dragon Bonus Baccarat" /></a>
+        <a class="slot-card" href="#" data-game="seven-seat-baccarat"><img src="assets/images/game-fortune-garuda-500.png" alt="7 Seat Baccarat" /></a>
+        <a class="slot-card" href="#" data-game="macao-baccarat"><img src="assets/images/game-aviator.png" alt="Macao Baccarat" /></a>
+        <a class="slot-card" href="#" data-game="salon-prive"><img src="assets/images/game-super-elements.png" alt="Salon Privé" /></a>
+        <a class="slot-card" href="#" data-game="bombay-club"><img src="assets/images/game-money-wheel.png" alt="Bombay Club" /></a>
+        <a class="slot-card" href="#" data-game="fan-tan"><img src="assets/images/game-aztec-gems.png" alt="Fan Tan" /></a>
+        <a class="slot-card" href="#" data-game="money-coin"><img src="assets/images/game-super-tiger.png" alt="Money Coin" /></a>
+      </section>
+
+      <div class="load-more">
+        <button class="load-more__btn" type="button">Load more</button>
+        <div class="load-more__counter">Shown 40 of 375 games</div>
+      </div>
+
+      <!-- Providers 水平捲動(Casino vendors) -->
+      <section class="providers reveal" aria-label="Casino Providers">
+        <div class="providers__head">
+          <h2 class="providers__title">Providers</h2>
+          <div class="providers__nav">
+            <button class="providers__arrow" data-scroll-prev="providers" aria-label="Previous">&#8249;</button>
+            <button class="providers__arrow" data-scroll-next="providers" aria-label="Next">&#8250;</button>
+          </div>
+        </div>
+        <div class="providers__track" data-scroll-track="providers">
+          <div class="providers__cell"><img src="assets/images/provider-evo.png" alt="Evolution" /><span class="providers__label">Evolution</span></div>
+          <div class="providers__cell"><img src="assets/images/provider-awcmsexy.png" alt="Sexy" /><span class="providers__label">Sexy</span></div>
+          <div class="providers__cell"><img src="assets/images/provider-awcmpp.png" alt="Pragmatic Play" /><span class="providers__label">PP</span></div>
+          <div class="providers__cell"><img src="assets/images/provider-awcmpt.png" alt="Playtech" /><span class="providers__label">Playtech</span></div>
+          <div class="providers__cell"><img src="assets/images/provider-jdb.png" alt="JDB" /><span class="providers__label">JDB</span></div>
+          <div class="providers__cell"><img src="assets/images/provider-awcmjili.png" alt="JILI" /><span class="providers__label">JILI</span></div>
+          <div class="providers__cell"><img src="assets/images/provider-awcmfc.png" alt="Fa Chai" /><span class="providers__label">Fa Chai</span></div>
+          <div class="providers__cell"><img src="assets/images/provider-pg.png" alt="PG Soft" /><span class="providers__label">PG Soft</span></div>
+          <div class="providers__cell"><img src="assets/images/provider-awcmyesbingo.png" alt="Yellow Bat" /><span class="providers__label">Yellow Bat</span></div>
+          <div class="providers__cell"><img src="assets/images/provider-nextspin.png" alt="NextSpin" /><span class="providers__label">NextSpin</span></div>
+        </div>
+      </section>
+
+      <!-- Events -->
+      <section class="events reveal" aria-label="Events">
+        <div class="events__head">
+          <h2 class="events__title">Events</h2>
+          <div class="events__nav">
+            <button class="events__arrow" data-scroll-prev="events" aria-label="Previous">&#8249;</button>
+            <button class="events__arrow" data-scroll-next="events" aria-label="Next">&#8250;</button>
+          </div>
+        </div>
+        <div class="events__track" data-scroll-track="events">
+          <div class="events__cell" style="background-image:url('assets/images/event-296753.jpg');" role="img" aria-label="Event"></div>
+          <div class="events__cell" style="background-image:url('assets/images/event-297950.jpg');" role="img" aria-label="Event"></div>
+          <div class="events__cell" style="background-image:url('assets/images/event-299017.jpg');" role="img" aria-label="Event"></div>
+          <div class="events__cell" style="background-image:url('assets/images/event-299784.jpg');" role="img" aria-label="Event"></div>
+          <div class="events__cell" style="background-image:url('assets/images/event-300074.png');" role="img" aria-label="Event"></div>
+        </div>
+      </section>
+
+      <!-- Featured Live Casino -->
+      <section class="featured reveal" aria-label="Featured Live Casino">
+        <div class="featured__head">
+          <h2 class="featured__title">Featured Live Casino</h2>
+          <div class="featured__nav">
+            <button class="featured__arrow" data-scroll-prev="featured" aria-label="Previous">&#8249;</button>
+            <button class="featured__arrow" data-scroll-next="featured" aria-label="Next">&#8250;</button>
+          </div>
+        </div>
+        <div class="featured__track" data-scroll-track="featured">
+          <div class="featured__cell"><img src="assets/images/featured-281248.png" alt="Featured 1" /></div>
+          <div class="featured__cell"><img src="assets/images/featured-281250.png" alt="Featured 2" /></div>
+          <div class="featured__cell"><img src="assets/images/featured-281252.png" alt="Featured 3" /></div>
+          <div class="featured__cell"><img src="assets/images/featured-281254.png" alt="Featured 4" /></div>
+          <div class="featured__cell"><img src="assets/images/featured-296141.png" alt="Featured 5" /></div>
+          <div class="featured__cell"><img src="assets/images/featured-296159.png" alt="Featured 6" /></div>
+          <div class="featured__cell"><img src="assets/images/featured-300553.png" alt="Featured 7" /></div>
+        </div>
+      </section>
+
+      <!-- @sync-footer-start: 7 區塊 footer 與 slots/casino/login 共用,改完任一處需用 tools/sync-footer.sh 同步到其他頁 -->
+      <!-- Sponsorships -->
+      <section class="sponsorships reveal" aria-label="Sponsorships">
+        <h2 class="sponsorships__title">Sponsorships</h2>
+        <ul class="sponsorships__list">
+          <li class="sponsorships__item">
+            <div class="sponsorships__logo"><img src="assets/images/sponsor-quetta.png" alt="Quetta Gladiators" /></div>
+            <div class="sponsorships__meta">
+              <div class="sponsorships__name">Quetta Gladiators</div>
+              <div class="sponsorships__role">Titanium Sponsor</div>
+              <div class="sponsorships__year">2023</div>
+            </div>
+          </li>
+          <li class="sponsorships__item">
+            <div class="sponsorships__logo"><img src="assets/images/sponsor-sunrisers.png" alt="Sunrisers Eastern Cape" /></div>
+            <div class="sponsorships__meta">
+              <div class="sponsorships__name">Sunrisers Eastern Cape</div>
+              <div class="sponsorships__role">Title Sponsor</div>
+              <div class="sponsorships__year">2023 - 2024</div>
+            </div>
+          </li>
+          <li class="sponsorships__item">
+            <div class="sponsorships__logo"><img src="assets/images/sponsor-deccan.png" alt="Deccan Gladiators" /></div>
+            <div class="sponsorships__meta">
+              <div class="sponsorships__name">Deccan Gladiators</div>
+              <div class="sponsorships__role">Title Sponsor</div>
+              <div class="sponsorships__year">2023 - 2024</div>
+            </div>
+          </li>
+          <li class="sponsorships__item">
+            <div class="sponsorships__logo"><img src="assets/images/sponsor-patriots.png" alt="St Kitts & Nevis Patriots" /></div>
+            <div class="sponsorships__meta">
+              <div class="sponsorships__name">St Kitts &amp; Nevis Patriots</div>
+              <div class="sponsorships__role">Principle Sponsor</div>
+              <div class="sponsorships__year">2024 - 2025</div>
+            </div>
+          </li>
+          <li class="sponsorships__item">
+            <div class="sponsorships__logo"><img src="assets/images/sponsor-biratnagar.png" alt="Biratnagar Kings" /></div>
+            <div class="sponsorships__meta">
+              <div class="sponsorships__name">Biratnagar Kings</div>
+              <div class="sponsorships__role">Back of Jersey Sponsor</div>
+              <div class="sponsorships__year">2024 - 2025</div>
+            </div>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Brand Ambassadors -->
+      <section class="ambassadors reveal" aria-label="Brand Ambassadors">
+        <h2 class="ambassadors__title">Brand Ambassadors</h2>
+        <ul class="ambassadors__list">
+          <li class="ambassadors__item">
+            <div class="ambassadors__logo"><img src="assets/images/amb-mia.png" alt="Mia Khalifa" /></div>
+            <div class="ambassadors__meta">
+              <div class="ambassadors__name">Mia Khalifa</div>
+              <div class="ambassadors__year">2024</div>
+            </div>
+          </li>
+          <li class="ambassadors__item">
+            <div class="ambassadors__logo"><img src="assets/images/amb-kevin.png" alt="Kevin Pietersen" /></div>
+            <div class="ambassadors__meta">
+              <div class="ambassadors__name">Kevin Pietersen</div>
+              <div class="ambassadors__year">2024 - 2026</div>
+            </div>
+          </li>
+          <li class="ambassadors__item">
+            <div class="ambassadors__logo"><img src="assets/images/amb-amy.png" alt="Amy Jackson" /></div>
+            <div class="ambassadors__meta">
+              <div class="ambassadors__name">Amy Jackson</div>
+              <div class="ambassadors__year">2023 - 2024</div>
+            </div>
+          </li>
+          <li class="ambassadors__item">
+            <div class="ambassadors__logo"><img src="assets/images/amb-hansika.png" alt="Hansika Motwani" /></div>
+            <div class="ambassadors__meta">
+              <div class="ambassadors__name">Hansika Motwani</div>
+              <div class="ambassadors__year">2023 - 2024</div>
+            </div>
+          </li>
+          <li class="ambassadors__item">
+            <div class="ambassadors__logo"><img src="assets/images/amb-wasim.svg" alt="Wasim Akram" /></div>
+            <div class="ambassadors__meta">
+              <div class="ambassadors__name">Wasim Akram</div>
+              <div class="ambassadors__year">2024 - 2028</div>
+            </div>
+          </li>
+          <li class="ambassadors__item">
+            <div class="ambassadors__logo"><img src="assets/images/amb-keya.png" alt="Keya Akter Payel" /></div>
+            <div class="ambassadors__meta">
+              <div class="ambassadors__name">Keya Akter Payel</div>
+              <div class="ambassadors__year">2025</div>
+            </div>
+          </li>
+          <li class="ambassadors__item">
+            <div class="ambassadors__logo"><img src="assets/images/amb-yesha.png" alt="Yesha Sagar" /></div>
+            <div class="ambassadors__meta">
+              <div class="ambassadors__name">Yesha Sagar</div>
+              <div class="ambassadors__year">2025 - 2026</div>
+            </div>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Official Brand Partner -->
+      <section class="brand-partner reveal" aria-label="Official Brand Partner">
+        <h2 class="brand-partner__title">Official Brand Partner</h2>
+        <a class="brand-partner__cell" href="https://www.cazvip.com/" target="_blank" rel="noopener">
+          <img src="assets/images/brand-partner-cazvip.png" alt="CazVIP" />
+        </a>
+      </section>
+
+      <!-- Gaming License -->
+      <section class="gaming-license reveal" aria-label="Gaming License">
+        <h2 class="gaming-license__title">Gaming License</h2>
+        <div class="gaming-license__grid">
+          <div class="gaming-license__cell"><img src="assets/images/license-gaming.png" alt="Gaming License" /></div>
+          <div class="gaming-license__cell"><img src="assets/images/license-anjouan.png" alt="Anjouan" /></div>
+          <div class="gaming-license__cell"><img src="assets/images/license-montenegro.png" alt="Montenegro" /></div>
+        </div>
+      </section>
+
+      <!-- Responsible Gaming -->
+      <section class="responsible-gaming reveal" aria-label="Responsible Gaming">
+        <h2 class="responsible-gaming__title">Responsible Gaming</h2>
+        <div class="responsible-gaming__row">
+          <a class="responsible-gaming__cell" href="terms.html#regulations"><img src="assets/images/rg-regulations.svg" alt="Regulations" /></a>
+          <a class="responsible-gaming__cell" href="terms.html#gamcare"><img src="assets/images/rg-gamcare.svg" alt="GamCare" /></a>
+          <a class="responsible-gaming__cell" href="terms.html#age-limit"><img src="assets/images/rg-age-limit.svg" alt="Age Limit 18+" /></a>
+        </div>
+      </section>
+
+      <!-- About Baji + Show More -->
+      <section class="about reveal" aria-label="About Baji">
+        <h3 class="about__title">Baji Bangladesh - Leading Online Gaming and Betting Platform in Bangladesh</h3>
+        <div class="about__body" data-about-body>
+          <p>In recent years, the online gaming and betting industry in Bangladesh has seen exponential growth, attracting players who seek excitement and rewarding experiences. As more people embrace digital platforms, the demand for reliable and diverse gaming options has surged. Our platform stands out as a top choice, offering an extensive range of games and betting opportunities from renowned providers worldwide.</p>
+          <p>With online betting becoming a mainstream entertainment choice, players now rely on platforms that offer both trust and variety. Among the most established names are <a href="index.html">Baji</a>, <a href="https://jeetbuzz8.xyz/" target="_blank" rel="noopener">Jeetbuzz</a>, <a href="https://6s.live/" target="_blank" rel="noopener">Six6s</a>, <a href="https://badsha.live/" target="_blank" rel="noopener">Badsha</a>, <a href="https://bagh.live/" target="_blank" rel="noopener">Bagh</a>, and <a href="https://citinow.com/" target="_blank" rel="noopener">Citinow</a>. These platforms deliver premium sports and casino betting experiences, featuring a broad spectrum of options including spreads, parlays, live bets, teasers, and prop wagers to satisfy every betting style.</p>
+          <h4>Diverse Gaming Options from Top Providers</h4>
+          <p>One of the key factors that set us apart is the sheer variety of gaming options we offer. We've partnered with some of the most reputable game providers in the industry to bring you a world-class gaming experience. Whether you're into sports betting, casino games, or unique online gaming experiences, we've got you covered.</p>
+          <p>Our platform features games from Microgaming, a leader in the online gaming industry, known for its high-quality slot games and progressive jackpots. For sports enthusiasts, SABA Sports and SBO Sports provide a comprehensive sportsbook covering a wide range of sports, including football, cricket, basketball, and more.</p>
+          <p>If you're a fan of interactive and visually engaging games, providers like Pocket Games, CQ9, and <a href="#" data-about-noop>JDB</a> offer a plethora of options, ranging from slots to arcade-style games. Evolution and Big Gaming deliver a superior live casino experience, bringing the thrill of a <a href="casino.html">real casino</a> directly to your screen with games like live blackjack, roulette, and baccarat.</p>
+          <p>We also cater to poker aficionados with offerings from BPOKER and a range of other card games from providers like KA Gaming and WorldMatch. For a more casual gaming experience, LUDO and So De provide fun, easy-to-play options that are perfect for all ages.</p>
+          <h4>Exclusive Game Providers and Titles</h4>
+          <p>Our platform is constantly expanding its game library, and we're proud to include exclusive providers like Sexy, Red Tiger, Spade Gaming, King Maker, <a href="#" data-about-noop>JILI</a>, Play8, <a href="#" data-about-noop>Fa Chai</a>, Pragmatic Play, and Playtech. These providers bring a mix of classic and innovative games, ensuring that there's something for everyone, whether you prefer traditional <a href="slots.html">slots</a> or more modern, feature-rich titles.</p>
+          <p>For those who seek the ultimate in gaming variety, we offer titles from WorldMatch, Play'n Go, SV388, and NETENT, all of which are known for their high-quality graphics and immersive gameplay. UG Sports and PLAYSTAR add to the diversity with a mix of sports betting and casino games, while RICH88, FASTSPIN, ICF, <a href="#" data-about-noop>SPRIBE</a>, and HotRoad round out our offerings with fast-paced, exciting games that keep you on the edge of your seat.</p>
+          <h4>Why Choose Us?</h4>
+          <p>When it comes to online gaming and betting in Bangladesh, our platform is second to none. We prioritize safety, security, and fair play, ensuring that your gaming experience is both enjoyable and secure. Our platform is licensed and regulated, and we use state-of-the-art encryption technology to protect your personal and financial information.</p>
+          <p>Our user-friendly interface makes it easy to navigate through our extensive range of games and sports betting options, whether you're a seasoned player or new to online gaming. Plus, with our dedicated customer support team available 24/7, help is always just a click away.</p>
+          <h4>Join Us Today and Start Winning</h4>
+          <p>If you're ready to take your gaming and betting experience to the next level, join us today. Not only will you gain access to an unparalleled selection of games and sports betting opportunities, but you'll also be able to take advantage of our generous bonuses and <a href="#" data-about-action="open-promotions">promotions</a>.</p>
+          <p>For those who <a href="#" data-about-noop>refer friends</a> to our platform, we offer exclusive referral bonuses. Every time your referred friends sign up and start playing, you'll earn rewards that can be used to enhance your own gaming experience. It's a win-win situation – the more friends you refer, the more you can win!</p>
+          <h4>Conclusion</h4>
+          <p>Don't miss out on the best online gaming and betting platform in Bangladesh. With top providers like Microgaming, <a href="#" data-about-noop>SABA</a> Sports, JDB, CQ9, Pocket Games, and many more, we offer a comprehensive gaming experience that's unmatched in the region. Sign up today and start exploring all that our platform has to offer. Remember, your next big win could be just a click away!</p>
+        </div>
+        <button class="about__toggle" data-about-toggle aria-expanded="false">Show more</button>
+      </section>
+
+      <!-- Copyright Footer -->
+      <section class="copyright reveal" aria-label="Copyright">
+        <div class="copyright__brand">Win Like A King</div>
+        <div class="copyright__line">© 2026 Baji Copyrights. All Rights Reserved</div>
+        <p class="copyright__text">
+          <a href="index.html">Baji.com</a> is owned and operated by Northern Lights Limited Holdings Limited. registration number: 15839, registered address: Hamchhako, Mutsamudu, Autonomous Island of Anjouan, Union of Comoros.
+        </p>
+        <p class="copyright__text">
+          Contact us <a href="mailto:legal@northernlightsltd.com">legal@northernlightsltd.com</a>.
+        </p>
+        <p class="copyright__text">
+          <a href="index.html">Baji.com</a> is licensed and regulated by the Government of the Autonomous Island of Anjouan, Union of Comoros and operates under License No. ALSI-202410030-FI1. <a href="index.html">Baji.com</a> has passed all regulatory compliance and is legally authorized to conduct gaming operations for any and all games of chance and wagering.
+        </p>
+      </section>
+      <!-- @sync-footer-end -->
+
+    </main>
+
+    <button class="back-to-top" type="button" data-back-to-top aria-label="Back to top" hidden>
+      <span aria-hidden="true">&#8593;</span>
+    </button>
+
+    <footer class="layout__bottom-bar">
+      <nav class="tab-bar" aria-label="Primary" data-tab-bar>
+        <button class="tab-bar__btn tab-bar__btn--menu" data-tab="menu">
+          <span class="tab-bar__img" aria-hidden="true"></span>
+          <span class="tab-bar__text">Menu</span>
+        </button>
+        <button class="tab-bar__btn tab-bar__btn--casino is-active" data-tab="casino">
+          <span class="tab-bar__img" aria-hidden="true"></span>
+          <span class="tab-bar__text">Casino</span>
+        </button>
+        <button class="tab-bar__btn tab-bar__btn--slots" data-tab="slots">
+          <span class="tab-bar__img" aria-hidden="true"></span>
+          <span class="tab-bar__text">Slots</span>
+        </button>
+        <button class="tab-bar__btn tab-bar__btn--promotions" data-tab="promotions">
+          <span class="tab-bar__img" aria-hidden="true"></span>
+          <span class="tab-bar__text">Promotions</span>
+        </button>
+      </nav>
+    </footer>
+
+  </div>
+
+  <script src="scripts/horizontal-scroll.js" defer></script>
+  <script src="scripts/about-toggle.js" defer></script>
+  <script src="scripts/scroll-reveal.js" defer></script>
+  <script src="scripts/back-to-top.js" defer></script>
+  <script src="scripts/tab-bar.js" defer></script>
+  <script src="scripts/menu-drawer.js" defer></script>
+  <script src="scripts/promotions-panel.js" defer></script>
+  <script src="scripts/game-toolbar.js" defer></script>
+  <script src="scripts/about-links.js" defer></script>
+  <script src="scripts/main.js" defer></script>
+</body>
+</html>

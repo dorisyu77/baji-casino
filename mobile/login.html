@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en" class="is-mobile">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
+  <title>BAJI Casino - Log in</title>
+  <link rel="stylesheet" href="styles/tokens.css" />
+  <link rel="stylesheet" href="styles/base.css" />
+  <link rel="stylesheet" href="styles/layout.css" />
+  <link rel="stylesheet" href="styles/components/auth-page.css" />
+</head>
+<body>
+  <div class="layout layout--auth">
+    <header class="layout__header auth-header">
+      <a class="auth-header__logo" href="index.html" aria-label="BAJI"></a>
+      <span class="auth-header__sponsor" aria-hidden="true"></span>
+      <div class="auth-header__spacer"></div>
+      <a class="auth-header__home" href="index.html" aria-label="Home"></a>
+    </header>
+
+    <main class="layout__main auth-page">
+      <section class="auth-hero">
+        <div class="auth-hero__text">
+          <p class="auth-hero__greeting">Hello</p>
+          <h1 class="auth-hero__title">Welcome to BJ</h1>
+        </div>
+        <div class="auth-hero__logo" aria-hidden="true"></div>
+      </section>
+
+      <nav class="auth-tabs" data-auth-tabs aria-label="Auth tabs">
+        <span class="auth-tabs__line" aria-hidden="true"></span>
+        <button class="auth-tab is-active" data-tab="login" type="button">Log in</button>
+        <button class="auth-tab" data-tab="signup" type="button">Sign up</button>
+      </nav>
+
+      <form class="auth-form auth-form--login" data-auth-form="login" novalidate>
+        <label class="auth-field">
+          <span class="auth-field__label">Username</span>
+          <input class="auth-field__input" type="text" name="username" placeholder="Enter your username" autocomplete="username" />
+        </label>
+        <label class="auth-field">
+          <span class="auth-field__label">Password</span>
+          <input class="auth-field__input" type="password" name="password" placeholder="Enter your password" autocomplete="current-password" />
+        </label>
+
+        <a class="auth-forgot" href="#">Forgot password?</a>
+        <button class="auth-submit" type="submit">Log in</button>
+      </form>
+
+      <form class="auth-form auth-form--signup" data-auth-form="signup" hidden novalidate>
+        <label class="auth-field">
+          <span class="auth-field__label">Username</span>
+          <input class="auth-field__input" type="text" name="username" placeholder="Enter your username" autocomplete="username" />
+        </label>
+
+        <div class="auth-field">
+          <span class="auth-field__label">Choose currency</span>
+          <div class="auth-dropdown" data-dropdown="currency">
+            <button class="auth-select" type="button" data-dropdown-trigger
+                    aria-haspopup="listbox" aria-expanded="false" aria-controls="dd-mobile-currency">
+              <span class="auth-select__flag" data-trigger-flag>🇧🇩</span>
+              <span class="auth-select__value" data-trigger-text>BDT</span>
+              <span class="auth-select__chevron" aria-hidden="true"></span>
+            </button>
+            <ul id="dd-mobile-currency" class="auth-dropdown__list" role="listbox" hidden>
+              <li class="auth-dropdown__option auth-dropdown__option--active" role="option" tabindex="-1" data-value="BDT" data-flag="🇧🇩" data-label="BDT">
+                <span class="auth-dropdown__option-flag">🇧🇩</span>
+                <span class="auth-dropdown__option-label">BDT</span>
+              </li>
+              <li class="auth-dropdown__option" role="option" tabindex="-1" data-value="USD" data-flag="🇺🇸" data-label="USD">
+                <span class="auth-dropdown__option-flag">🇺🇸</span>
+                <span class="auth-dropdown__option-label">USD</span>
+              </li>
+              <li class="auth-dropdown__option" role="option" tabindex="-1" data-value="INR" data-flag="🇮🇳" data-label="INR">
+                <span class="auth-dropdown__option-flag">🇮🇳</span>
+                <span class="auth-dropdown__option-label">INR</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="auth-field">
+          <span class="auth-field__label">Phone number</span>
+          <div class="auth-phone">
+            <div class="auth-dropdown" data-dropdown="country" data-trigger-text-target=".auth-phone__code">
+              <button class="auth-phone__country" type="button" data-dropdown-trigger
+                      aria-haspopup="listbox" aria-expanded="false" aria-controls="dd-mobile-country">
+                <span class="auth-phone__flag" data-trigger-flag>🇧🇩</span>
+                <span class="auth-phone__code" data-trigger-text>+880</span>
+                <span class="auth-phone__chevron" aria-hidden="true"></span>
+              </button>
+              <ul id="dd-mobile-country" class="auth-dropdown__list" role="listbox" hidden>
+                <li class="auth-dropdown__option auth-dropdown__option--active" role="option" tabindex="-1" data-value="BD" data-flag="🇧🇩" data-label="+880">
+                  <span class="auth-dropdown__option-flag">🇧🇩</span>
+                  <span class="auth-dropdown__option-label">Bangladesh (+880)</span>
+                </li>
+                <li class="auth-dropdown__option" role="option" tabindex="-1" data-value="IN" data-flag="🇮🇳" data-label="+91">
+                  <span class="auth-dropdown__option-flag">🇮🇳</span>
+                  <span class="auth-dropdown__option-label">India (+91)</span>
+                </li>
+                <li class="auth-dropdown__option" role="option" tabindex="-1" data-value="PK" data-flag="🇵🇰" data-label="+92">
+                  <span class="auth-dropdown__option-flag">🇵🇰</span>
+                  <span class="auth-dropdown__option-label">Pakistan (+92)</span>
+                </li>
+              </ul>
+            </div>
+            <input class="auth-phone__input" type="tel" name="phone" placeholder="- - -   - - -   - - -" inputmode="numeric" />
+          </div>
+        </div>
+
+        <div class="auth-collapsible" data-collapsible>
+          <button class="auth-refer" type="button" data-collapsible-trigger aria-expanded="false" aria-controls="auth-refer-panel">
+            <span class="auth-refer__text">Refer code (Optional)</span>
+            <span class="auth-refer__chevron" aria-hidden="true"></span>
+          </button>
+          <div id="auth-refer-panel" class="auth-collapsible__panel" hidden>
+            <input class="auth-collapsible__input" type="text" name="refer" placeholder="Enter referral code" autocomplete="off" />
+          </div>
+        </div>
+
+        <button class="auth-submit" type="submit">Continue</button>
+
+        <label class="auth-terms">
+          <input class="auth-terms__checkbox" type="checkbox" checked />
+          <span class="auth-terms__text">I confirm that I am 18 years old and I have read the <a class="auth-terms__link" href="terms.html">Terms &amp; Conditions</a></span>
+        </label>
+      </form>
+    </main>
+
+    <a class="auth-fab" href="#" aria-label="Help"></a>
+  </div>
+
+  <script type="module" src="scripts/main-login.js"></script>
+</body>
+</html>

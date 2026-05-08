@@ -1,0 +1,127 @@
+/* menu-drawer — hamburger 點擊後從左側展開的完整選單
+   ref: baji.live 桌面 hamburger 行為（推論自 side-nav--beforeInited collapse pattern） */
+
+.menu-drawer-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  opacity: 0;
+  pointer-events: none;
+  z-index: 599;
+  transition: opacity 200ms ease;
+}
+
+.menu-drawer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 240px;
+  height: 100vh;
+  background: var(--color-surface-raised);
+  border-right: 1px solid var(--color-border);
+  display: flex;
+  flex-direction: column;
+  transform: translateX(-100%);
+  transition: transform 200ms ease;
+  z-index: 600;
+  overflow-y: auto;
+}
+
+body.is-menu-open .menu-drawer {
+  transform: translateX(0);
+}
+
+body.is-menu-open .menu-drawer-overlay {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.menu-drawer__head {
+  height: var(--size-top-header-h);
+  display: flex;
+  align-items: center;
+  padding: 0 16px;
+  border-bottom: 1px solid var(--color-border);
+  gap: 12px;
+}
+
+.menu-drawer__close {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  background: transparent;
+  border: 0;
+  color: var(--color-text-primary);
+  font-size: 20px;
+  line-height: 1;
+}
+
+.menu-drawer__close:hover {
+  color: var(--color-link-green);
+}
+
+.menu-drawer__logo {
+  height: 32px;
+}
+
+.menu-drawer__list {
+  list-style: none;
+  margin: 0;
+  padding: 8px 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.menu-drawer__divider {
+  height: 1px;
+  background: var(--color-border);
+  margin: 8px 16px;
+}
+
+.menu-drawer__item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  height: 52px;
+  padding: 0 20px;
+  color: var(--color-text-muted);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color 160ms ease, color 160ms ease;
+}
+
+.menu-drawer__item:hover {
+  background: var(--color-page-bg);
+  color: var(--color-text-primary);
+}
+
+.menu-drawer__item--active {
+  color: var(--color-text-primary);
+  background: var(--color-page-bg);
+  position: relative;
+}
+
+.menu-drawer__item--active::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: var(--color-surface-strong);
+}
+
+.menu-drawer__item img {
+  width: 20px;
+  height: 20px;
+  flex: 0 0 20px;
+}
+
+.menu-drawer__item-label {
+  flex: 1;
+}

@@ -1,0 +1,142 @@
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: row;
+  background: var(--color-page-bg);
+}
+
+.layout {
+  width: 100%;
+  min-width: var(--awd-min);
+  margin: 0 auto;
+  background: var(--color-surface-raised);
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.layout__header {
+  width: 100%;
+  height: var(--size-header-h);
+  flex: 0 0 auto;
+}
+
+.layout__top-header {
+  display: none;
+}
+
+.layout__main {
+  width: 100%;
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.layout__bottom-bar {
+  width: 100%;
+  height: var(--size-bottom-bar-h);
+  flex: 0 0 auto;
+}
+
+/* Mobile max-width cap (>=430 viewport: content cap to 430 centered) */
+@media (min-width: 431px) and (max-width: 1023px) {
+  .layout {
+    max-width: 430px;
+  }
+}
+
+/* Desktop layout (>=1024) */
+@media (min-width: 1024px) {
+  .side-nav {
+    display: block;
+    position: sticky;
+    top: 65px;
+    height: calc(100vh - 65px);
+    align-self: flex-start;
+  }
+
+  .layout {
+    max-width: none;
+  }
+
+  .layout__header {
+    display: none;
+  }
+
+  .layout__top-header {
+    display: block;
+  }
+
+  .top-header {
+    display: flex;
+  }
+
+  .layout__bottom-bar {
+    display: none;
+  }
+
+  /* Wider hero */
+  .hero-banner__pic {
+    width: 100%;
+    max-width: 1371px;
+    height: var(--size-hero-h);
+  }
+
+  /* Marquee spans full content */
+  .marquee {
+    padding: 0 var(--space-sidepad);
+  }
+
+  /* Category tabs: show all 9, wider gaps */
+  .category-tabs {
+    padding: 0 var(--space-sidepad);
+    justify-content: flex-start;
+    gap: 8px;
+  }
+
+  /* Game grid: 8 cols desktop */
+  .game-grid {
+    padding: 0 var(--space-sidepad);
+  }
+
+  /* Providers / Events / Featured wider */
+  .providers,
+  .events,
+  .featured {
+    padding: 0 var(--space-sidepad);
+  }
+
+  .providers__cell {
+    width: 120px;
+    height: 74px;
+  }
+
+  .events__cell {
+    width: 365px;
+    height: 175px;
+  }
+
+  .featured__cell {
+    width: 146px;
+    height: 194px;
+  }
+
+  /* Hide game card 7+8 on mobile, show on desktop */
+  .game-card--desktop-only {
+    display: flex;
+  }
+}
+
+/* Mobile: hide desktop-only game cards */
+@media (max-width: 1023px) {
+  .game-card--desktop-only {
+    display: none;
+  }
+  /* Hide desktop-only category tabs beyond the first 4 on mobile visible area — we still render them in overflow scroll */
+}
+
+/* Apply max-widths inside .layout for content */
+.layout__main > * {
+  /* components carry their own padding; no extra here */
+}

@@ -1,0 +1,69 @@
+/* Hero carousel banner: 全寬, h=210, 圖片 cover */
+
+.hero {
+  position: relative;
+  width: 100%;
+  height: var(--size-hero-h);
+  overflow: hidden;
+  background: var(--color-page-bg);
+}
+
+.hero__track {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  transition: transform 600ms ease;
+  will-change: transform;
+}
+
+.hero__slide {
+  flex: 0 0 100%;
+  width: 100%;
+  height: 100%;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.hero__nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 36px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.45);
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 200ms ease;
+  z-index: 2;
+}
+.hero:hover .hero__nav { opacity: 1; }
+.hero__nav img { width: 16px; height: 30px; }
+.hero__nav--prev { left: 0; border-radius: 0 4px 4px 0; }
+.hero__nav--next { right: 0; border-radius: 4px 0 0 4px; }
+
+.hero__dots {
+  position: absolute;
+  bottom: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 6px;
+  z-index: 2;
+}
+.hero__dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.4);
+  cursor: pointer;
+  transition: background 200ms ease, width 200ms ease;
+}
+.hero__dot--active {
+  background: var(--color-text-primary);
+  width: 20px;
+  border-radius: 4px;
+}

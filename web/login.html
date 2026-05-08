@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en" class="is-desktop">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BAJI Casino - Log in / Sign up</title>
+  <link rel="stylesheet" href="styles/tokens.css" />
+  <link rel="stylesheet" href="styles/base.css" />
+  <link rel="stylesheet" href="styles/components/auth-page.css" />
+</head>
+<body>
+  <div class="auth-layout">
+
+    <header class="auth-header">
+      <a class="auth-header__logo" href="index.html" aria-label="BAJI">
+        <img src="assets/images/header/logo.png" alt="BAJI" />
+      </a>
+      <div class="auth-header__sponsor" aria-label="Team sponsors">
+        <img src="assets/images/header/quetta-gladiators.png" alt="Quetta Gladiators" />
+        <img src="assets/images/header/biratnagar-kings.png" alt="Biratnagar Kings" />
+      </div>
+
+      <div class="auth-header__spacer"></div>
+
+      <a class="auth-header__home" href="index.html" aria-label="Home">
+        <img src="assets/images/auth/icon-home.svg" alt="" />
+      </a>
+    </header>
+
+    <section class="auth-landing">
+      <div class="auth-landing__splash" aria-hidden="true">
+        <video class="auth-landing__video"
+               autoplay muted loop playsinline
+               poster="assets/images/auth/logo-movie.jpg">
+          <source src="assets/images/auth/logo-movie.mp4" type="video/mp4" />
+        </video>
+      </div>
+
+      <div class="auth-landing__inner">
+        <div class="auth-landing__main">
+          <div class="auth-tabs" data-auth-tabs>
+            <div class="auth-tabs__head">
+              <button class="auth-tabs__btn is-active" data-tab="login" type="button">Log in</button>
+              <button class="auth-tabs__btn" data-tab="signup" type="button">Sign up</button>
+            </div>
+            <div class="auth-tabs__line" data-auth-line></div>
+
+            <!-- Login panel -->
+            <div class="auth-panel" data-auth-panel="login">
+              <form class="auth-form" data-auth-form="login" novalidate>
+                <div class="auth-form__row">
+                  <label class="auth-form__label" for="auth-username">Username</label>
+                  <div class="auth-input">
+                    <input id="auth-username" type="text" name="username" placeholder="Enter your username" autocomplete="username" data-required />
+                  </div>
+                </div>
+
+                <div class="auth-form__row">
+                  <label class="auth-form__label" for="auth-password">Password</label>
+                  <div class="auth-input">
+                    <input id="auth-password" type="password" name="password" placeholder="Enter your password" autocomplete="current-password" data-required />
+                  </div>
+                </div>
+
+                <a class="auth-forgot" href="#">Forgot password?</a>
+
+                <button class="auth-submit is-disabled" type="submit">Log in</button>
+              </form>
+            </div>
+
+            <!-- Sign up panel -->
+            <div class="auth-panel" data-auth-panel="signup" hidden>
+              <h2 class="auth-step-heading" data-step-heading>Contact</h2>
+
+              <ul class="auth-stepper" aria-label="Sign up steps" data-auth-stepper>
+                <li class="auth-stepper__item is-active" data-step="1">
+                  <span class="auth-stepper__circle">1</span>
+                  <span class="auth-stepper__label">Contact</span>
+                </li>
+                <li class="auth-stepper__connector" data-step-link="1-2" aria-hidden="true"></li>
+                <li class="auth-stepper__item" data-step="2">
+                  <span class="auth-stepper__circle">2</span>
+                  <span class="auth-stepper__label">Personal</span>
+                </li>
+                <li class="auth-stepper__connector" data-step-link="2-3" aria-hidden="true"></li>
+                <li class="auth-stepper__item" data-step="3">
+                  <span class="auth-stepper__circle">3</span>
+                  <span class="auth-stepper__label">Password</span>
+                </li>
+              </ul>
+
+              <!-- Step 1: Contact -->
+              <form class="auth-form" data-step-form="1" novalidate>
+                <div class="auth-form__row">
+                  <label class="auth-form__label">Choose currency</label>
+                  <div class="auth-dropdown" data-dropdown="currency">
+                    <button class="auth-select" type="button" data-dropdown-trigger
+                            aria-haspopup="listbox" aria-expanded="false" aria-controls="dd-web-currency">
+                      <span class="auth-select__flag" data-trigger-flag>🇧🇩</span>
+                      <span class="auth-select__value" data-trigger-text>BDT</span>
+                      <span class="auth-select__chevron" aria-hidden="true"></span>
+                    </button>
+                    <ul id="dd-web-currency" class="auth-dropdown__list" role="listbox" hidden>
+                      <li class="auth-dropdown__option auth-dropdown__option--active" role="option" tabindex="-1" data-value="BDT" data-flag="🇧🇩" data-label="BDT">
+                        <span class="auth-dropdown__option-flag">🇧🇩</span>
+                        <span class="auth-dropdown__option-label">BDT</span>
+                      </li>
+                      <li class="auth-dropdown__option" role="option" tabindex="-1" data-value="USD" data-flag="🇺🇸" data-label="USD">
+                        <span class="auth-dropdown__option-flag">🇺🇸</span>
+                        <span class="auth-dropdown__option-label">USD</span>
+                      </li>
+                      <li class="auth-dropdown__option" role="option" tabindex="-1" data-value="INR" data-flag="🇮🇳" data-label="INR">
+                        <span class="auth-dropdown__option-flag">🇮🇳</span>
+                        <span class="auth-dropdown__option-label">INR</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+
+                <div class="auth-form__row">
+                  <label class="auth-form__label">Phone number</label>
+                  <div class="auth-phone">
+                    <div class="auth-dropdown" data-dropdown="country" data-trigger-text-target=".auth-phone__code">
+                      <button class="auth-phone__country" type="button" data-dropdown-trigger
+                              aria-haspopup="listbox" aria-expanded="false" aria-controls="dd-web-country">
+                        <span class="auth-phone__flag" data-trigger-flag>🇧🇩</span>
+                        <span class="auth-phone__code" data-trigger-text>+880</span>
+                        <span class="auth-phone__chevron" aria-hidden="true"></span>
+                      </button>
+                      <ul id="dd-web-country" class="auth-dropdown__list" role="listbox" hidden>
+                        <li class="auth-dropdown__option auth-dropdown__option--active" role="option" tabindex="-1" data-value="BD" data-flag="🇧🇩" data-label="+880">
+                          <span class="auth-dropdown__option-flag">🇧🇩</span>
+                          <span class="auth-dropdown__option-label">Bangladesh (+880)</span>
+                        </li>
+                        <li class="auth-dropdown__option" role="option" tabindex="-1" data-value="IN" data-flag="🇮🇳" data-label="+91">
+                          <span class="auth-dropdown__option-flag">🇮🇳</span>
+                          <span class="auth-dropdown__option-label">India (+91)</span>
+                        </li>
+                        <li class="auth-dropdown__option" role="option" tabindex="-1" data-value="PK" data-flag="🇵🇰" data-label="+92">
+                          <span class="auth-dropdown__option-flag">🇵🇰</span>
+                          <span class="auth-dropdown__option-label">Pakistan (+92)</span>
+                        </li>
+                      </ul>
+                    </div>
+                    <input class="auth-phone__input" type="tel" name="phone" placeholder="- - -   - - -   - - -" inputmode="numeric" data-required />
+                  </div>
+                </div>
+
+                <button class="auth-submit is-disabled" type="submit" data-submit-step="1">Continue</button>
+              </form>
+
+              <!-- Step 2: Personal -->
+              <form class="auth-form" data-step-form="2" hidden novalidate>
+                <div class="auth-form__row">
+                  <label class="auth-form__label" for="auth-fullname">Full name</label>
+                  <div class="auth-input">
+                    <input id="auth-fullname" type="text" name="fullname" placeholder="Enter your full name" autocomplete="name" data-required />
+                  </div>
+                </div>
+
+                <div class="auth-form__row">
+                  <label class="auth-form__label" for="auth-dob">Date of birth</label>
+                  <div class="auth-input">
+                    <input id="auth-dob" type="text" name="dob" placeholder="DD / MM / YYYY" inputmode="numeric" data-required />
+                  </div>
+                </div>
+
+                <button class="auth-submit is-disabled" type="submit" data-submit-step="2">Continue</button>
+              </form>
+
+              <!-- Step 3: Password -->
+              <form class="auth-form" data-step-form="3" hidden novalidate>
+                <div class="auth-form__row">
+                  <label class="auth-form__label" for="auth-newpw">Password</label>
+                  <div class="auth-input">
+                    <input id="auth-newpw" type="password" name="newpassword" placeholder="Choose a password" autocomplete="new-password" data-required />
+                  </div>
+                </div>
+
+                <div class="auth-form__row">
+                  <label class="auth-form__label" for="auth-confirmpw">Confirm password</label>
+                  <div class="auth-input">
+                    <input id="auth-confirmpw" type="password" name="confirmpassword" placeholder="Re-enter password" autocomplete="new-password" data-required />
+                  </div>
+                </div>
+
+                <button class="auth-submit is-disabled" type="submit" data-submit-step="3">Sign up</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="auth-watermark" aria-hidden="true">
+      <img src="assets/images/header/logo.png" alt="" />
+    </div>
+  </div>
+
+  <script src="scripts/auth-tabs.js" defer></script>
+  <script src="scripts/auth-dropdown.js" defer></script>
+</body>
+</html>

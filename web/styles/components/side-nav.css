@@ -1,0 +1,50 @@
+/* Side nav: 64px wide, livechat top + 9 sport categories + extra links */
+
+.side-nav__inner {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.side-nav__livechat {
+  width: var(--size-side-livechat-w);
+  height: var(--size-side-livechat-h);
+  margin: 8px 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-surface-card);
+  border-radius: var(--radius-btn-sm);
+  color: #fff;
+}
+.side-nav__livechat img { width: var(--size-side-icon); height: var(--size-side-icon); }
+
+.side-nav__divider {
+  height: 16px;
+}
+
+.side-nav__list { display: flex; flex-direction: column; }
+
+.side-nav__item {
+  height: var(--size-side-item-h);
+  padding: 0 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.side-nav__item img {
+  width: var(--size-side-icon);
+  height: var(--size-side-icon);
+  display: block;
+}
+.side-nav__item:hover { background: var(--color-page-bg); }
+.side-nav__item--active::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: var(--color-surface-strong);
+}

@@ -1,0 +1,107 @@
+.header {
+  display: flex;
+  align-items: center;
+  height: var(--size-header-h);
+  padding: 0 13px 0 16px;
+  gap: 0;
+  background: var(--color-surface-raised);
+}
+
+.header__logo {
+  width: 40px;
+  height: 40px;
+  flex: 0 0 auto;
+  background: url('../../assets/images/logo.png') no-repeat center / contain;
+}
+
+.header__spacer {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.header__sponsor {
+  width: 30px;
+  height: 33px;
+  margin-left: 5px;
+  flex: 0 0 auto;
+  overflow: hidden;
+  position: relative;
+}
+
+.header__sponsor-track {
+  display: flex;
+  width: 180px;
+  height: 100%;
+  animation: header-sponsor-cycle 10s ease-in-out infinite;
+}
+
+.header__sponsor-track img {
+  width: 30px;
+  height: 33px;
+  object-fit: contain;
+  flex: 0 0 auto;
+  display: block;
+}
+
+@keyframes header-sponsor-cycle {
+  0%   { transform: translateX(0); }
+  16%  { transform: translateX(0); }
+  20%  { transform: translateX(-30px); }
+  36%  { transform: translateX(-30px); }
+  40%  { transform: translateX(-60px); }
+  56%  { transform: translateX(-60px); }
+  60%  { transform: translateX(-90px); }
+  76%  { transform: translateX(-90px); }
+  80%  { transform: translateX(-120px); }
+  96%  { transform: translateX(-120px); }
+  100% { transform: translateX(-150px); }
+}
+
+.header__actions {
+  display: flex;
+  align-items: center;
+  gap: 0;
+}
+
+.header__btn {
+  height: 34px;
+  padding: 0 10px;
+  border-radius: var(--radius-btn-sm);
+  font-size: var(--font-size-sm);
+  font-weight: 500;
+  line-height: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  min-width: 91px;
+}
+
+.header__btn--login {
+  color: var(--color-text-muted);
+  background: transparent;
+  border: 1px solid #454745;
+}
+
+.header__btn--signup {
+  color: var(--color-text-primary);
+  background: var(--color-surface-strong);
+  border: 0;
+  margin-left: 4px;
+}
+
+.header__flag {
+  width: var(--size-flag);
+  height: var(--size-flag);
+  margin-left: 13px;
+  border-radius: 50%;
+  overflow: hidden;
+  flex: 0 0 auto;
+}
+
+.header__flag img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}

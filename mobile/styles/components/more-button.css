@@ -1,0 +1,32 @@
+.more-button-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  margin-top: 20px;
+  padding: 0 var(--space-sidepad);
+}
+
+.more-button {
+  width: var(--size-more-btn-w);
+  height: var(--size-more-btn-h);
+  background: var(--color-surface-strong);
+  color: var(--color-text-primary);
+  font-family: var(--font-family-btn);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  border-radius: var(--radius-btn-sm);
+  padding: 0 10px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+}
+
+.more-button-row__brand {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #000 url('../../assets/images/logo.png') no-repeat center / 28px 28px;
+  flex: 0 0 auto;
+}
