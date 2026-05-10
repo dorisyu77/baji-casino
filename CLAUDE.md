@@ -56,6 +56,14 @@
 → 本專案多數任務(逐區塊切版、tokens 對齊、加元件)屬「需 user 即時迭代」,
   inline 是預設;只在偵察階段、跨包搜尋等少數情境才開 subagent。
 
+## 線上網站登入(baji.live 測試帳號)
+
+- **帳密儲存於**:`.claude/baji-credentials.json`(本機,`.gitignore` 已排除,權限 600)
+- **用途**:用 chrome-devtools MCP 開 https://baji.live → 登入 → 抓取登入態 UI
+  (menu drawer 含 Withdraw / Deposit / Bet History / Account / Logout 等項目)
+- **使用方式**:在 chrome-devtools MCP 內 `evaluate_script` 讀檔取值,或直接讀 JSON 檔
+- **安全**:此 repo 為 PUBLIC,**不可** 把帳密 commit / push / 在 issue 留言貼出 / 寫進 git tracked 檔
+
 ## 結構速查
 ```
 baji/
