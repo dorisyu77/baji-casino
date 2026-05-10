@@ -3,6 +3,9 @@
 > 對齊 baji.live UI/UX/動態 100% 的標準作業流程。
 > 工具：`sections.json`（selector 對照）、`snippet.js`（採集 helper）
 
+> **Note**: `results/` 是動態產出,本 repo 不版控。第一次跑 SOP 前需 `mkdir results`。
+> 上一輪比對紀錄(2026-04-29 ~ 04-30)已封存於 git commit `bbb0154`,需要時可 `git show bbb0154 -- tools/section-compare/results/` 取出。
+
 ## 前置
 - 本地 server 在 `http://localhost:8000` 跑著
 - 瀏覽器 / chrome-devtools MCP 已連線

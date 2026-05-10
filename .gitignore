@@ -14,6 +14,9 @@ __pycache__/
 mobile/capture/
 web/capture/
 
+# section-compare 比對紀錄(動態產出,跑 SOP 時自動重建)
+tools/section-compare/results/
+
 # 根目錄的設計參考圖
 /index.png
 
