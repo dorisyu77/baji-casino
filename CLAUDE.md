@@ -38,6 +38,24 @@
 - **像素差**:嚴格 < 2%(web 在 mask icon 後可放寬到 < 5%)
 - **零幻覺政策**(全域 `~/.claude/CLAUDE.md` §2):無實測依據時不寫死數值
 
+## Sub agent 使用原則
+
+判斷不在「任務多寡」,在「**是否需要看到 / 控制 / 即時迭代每一步**」。
+
+### 用 subagent
+- 開放式跨檔探索(`Explore`)— 跨多個目錄 grep/Glob,要結論不要 trace
+- 獨立可平行的子任務(同時 backend + frontend + tests 等獨立領域)
+- PR 級別深度 code review(`code-reviewer`)
+
+### 不用 subagent
+- 已知檔案的精確修改(直接 Edit)
+- 需要逐步 user 看反饋的互動式工作
+- 串接式依賴工作(每步依賴前步結果)
+- 批量重複操作(寫 script 比 spawn N 個 agent 更省)
+
+→ 本專案多數任務(逐區塊切版、tokens 對齊、加元件)屬「需 user 即時迭代」,
+  inline 是預設;只在偵察階段、跨包搜尋等少數情境才開 subagent。
+
 ## 結構速查
 ```
 baji/
